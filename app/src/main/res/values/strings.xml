@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Food For All</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Account</string>
+    <string name="menu_slideshow">Contact Us</string>
+    <string name="tv_UserName">Nethmee Charuni</string>
+    <string name="btnfindfood">find food</string>
+    <string name="btndonate">donations</string>
+    <string name="btnlogin">login</string>
+    <string name="btnrateus">rate us</string>
+    <string name="btnvacancies">vacancies</string>
+    <string name="btnhowto">how to use</string>
+
+
+    <string name="tvMyProfile">My Profile</string>
+    <string name="Donor">Donor</string>
+    <string name="name">Nethmee Charuni</string>
+    <string name="email">charuni@gmail.com</string>
+    <string name="mobile">07418529630</string>
+    <string name="Address">No.59,Peradeniya,Kandy</string>
+    <string name="HeadingDonation">My Donations</string>
+    <string name="tvDonation">You have done 10 donations</string>
+    <string name="HeadingPosts">My Posts</string>
+    <string name="date">Posted on: 02.03.2022</string>
+    <string name="don">10</string>
+    <string name="btnEdit">Edit</string>
+    <string name="btnDelete">Delete</string>
+    <string name="btnEditProfile">Edit Profile</string>
+    <string name="btnDeleteProfile">Delete Account</string>
+
+
+</resources>
