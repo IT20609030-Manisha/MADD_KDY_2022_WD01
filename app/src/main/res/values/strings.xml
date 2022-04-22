@@ -35,5 +35,39 @@
     <string name="btnEditProfile">Edit Profile</string>
     <string name="btnDeleteProfile">Delete Account</string>
 
+    <string name="login">LOGIN</string>
+    <string name="etEmailHint">Enter email</string>
+    <string name="etPassword">Enter Password</string>
+    <string name="btnCreateAccount">CREATE AN ACCOUNT</string>
+    <string name="btnGmail">LOGIN WITH GMAIL</string>
+    <string name="tvForgotPassword">Forgot Password?</string>
+    <string name="btnNeeder">Needer</string>
+    <string name="btnDriver">Driver</string>
+    <string name="btnDonor">Donor</string>
+    <string name="SelectionText">Join With us as a.......</string>
+    <string name="forgotpassword">Forgot Password?</string>
+    <string name="passwordText">Please enter your registered email address</string>
+    <string name="btnResetPassword">RESET PASSWORD</string>
+    <string name="RegForm">Personal Details</string>
+    <string name="tvfname">First Name</string>
+    <string name="tvlname">Last Name</string>
+    <string name="tvemail">Email</string>
+    <string name="tvContactNumber">Contact Number</string>
+    <string name="tvAddress">Address</string>
+    <string name="tvPassword">Password</string>
+    <string name="tvConfirmPassword">Confirm Password</string>
+    <string name="btnSubmit">Submit</string>
+    <string name="tvCheckbox">I agree to your terms and conditions</string>
+    <string name="hintfName">Enter Name</string>
+    <string name="hintEmail">Enter email</string>
+    <string name="hintemail">abc@gmail.com</string>
+    <string name="hintConNumber">+94818974231</string>
+    <string name="hintPassword">........</string>
+    <string name="tvRegNo">Registration Number</string>
+    <string name="tvOrganizationName">Organization Name</string>
+    <string name="tvName">Name</string>
+    <string name="tvDesignation">Designation</string>
+    <string name="tvEmergency">Emergency Details</string>
+
 
 </resources>

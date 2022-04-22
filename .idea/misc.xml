@@ -16,6 +16,22 @@
         <entry key="..\:/MADD/NaviDrawer/app/src/main/res/menu/main.xml" value="0.25416666666666665" />
         <entry key="..\:/MADD/NaviDrawer/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2495" />
         <entry key="..\:/MADD/NaviDrawer/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2495" />
+        <entry key="..\:/Users/user/Desktop/MADD_pro/MADD_KDY_2022_WD01/app/src/main/res/drawable-v24/border.xml" value="0.1915" />
+        <entry key="..\:/Users/user/Desktop/MADD_pro/MADD_KDY_2022_WD01/app/src/main/res/drawable-v24/gradient_normal.xml" value="0.1915" />
+        <entry key="..\:/Users/user/Desktop/MADD_pro/MADD_KDY_2022_WD01/app/src/main/res/layout/activity_account_selection_page2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/Desktop/MADD_pro/MADD_KDY_2022_WD01/app/src/main/res/layout/activity_forgot_password_page3.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/Desktop/MADD_pro/MADD_KDY_2022_WD01/app/src/main/res/layout/activity_login_main_page1.xml" value="0.215625" />
+        <entry key="..\:/Users/user/Desktop/MADD_pro/MADD_KDY_2022_WD01/app/src/main/res/layout/activity_login_page1.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/Desktop/MADD_pro/MADD_KDY_2022_WD01/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/user/Desktop/MADD_pro/MADD_KDY_2022_WD01/app/src/main/res/layout/activity_password_forgot_page3.xml" value="0.14947916666666666" />
+        <entry key="..\:/Users/user/Desktop/MADD_pro/MADD_KDY_2022_WD01/app/src/main/res/layout/activity_reg_donor_page4.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/Desktop/MADD_pro/MADD_KDY_2022_WD01/app/src/main/res/layout/activity_reg_driver_page6.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/user/Desktop/MADD_pro/MADD_KDY_2022_WD01/app/src/main/res/layout/activity_reg_form_donor_page4.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/Desktop/MADD_pro/MADD_KDY_2022_WD01/app/src/main/res/layout/activity_reg_form_driver_page6.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/Desktop/MADD_pro/MADD_KDY_2022_WD01/app/src/main/res/layout/activity_reg_form_needer_page5.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/Desktop/MADD_pro/MADD_KDY_2022_WD01/app/src/main/res/layout/activity_reg_needer_page5.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/user/Desktop/MADD_pro/MADD_KDY_2022_WD01/app/src/main/res/layout/activity_select_account_page2.xml" value="0.14947916666666666" />
+        <entry key="..\:/Users/user/Desktop/MADD_pro/MADD_KDY_2022_WD01/app/src/main/res/layout/fragment_home.xml" value="0.184375" />
       </map>
     </option>
   </component>

@@ -14,4 +14,5 @@
     <color name="darkBlue">#03719e</color>
     <color name="orange">#f28500</color>
     <color name="gray">#bac4ca</color>
+    <color name="LoginHintColor">#fbf8f8</color>
 </resources>

@@ -6,15 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.navidrawer.AdminDashboard;
+import com.example.navidrawer.LoginMainPage1;
 import com.example.navidrawer.R;
-import com.example.navidrawer.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
 
@@ -35,6 +33,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         //Create Buttons
         Button btnHowToUse = view.findViewById(R.id.btn_HowToUse);
+        Button btnLogin = view.findViewById(R.id.btn_login);
 
         //set Listners
         //How to use
@@ -45,6 +44,15 @@ public class HomeFragment extends Fragment {
             }
         });
         //Donations
+
+
+        //Login
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), LoginMainPage1.class));
+            }
+        });
         return view;
 
 
