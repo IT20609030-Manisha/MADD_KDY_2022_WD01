@@ -68,6 +68,7 @@
     <string name="tvName">Name</string>
     <string name="tvDesignation">Designation</string>
     <string name="tvEmergency">Emergency Details</string>
+    <string name="ethintpassword">Enter new password</string>
 
 
 </resources>

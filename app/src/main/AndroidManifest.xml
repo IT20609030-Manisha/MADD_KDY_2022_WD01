@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NaviDrawer">
         <activity
+            android:name=".newPasswordPage8"
+            android:exported="false" />
+        <activity
+            android:name=".newPasswordPage7"
+            android:exported="false" />
+        <activity
             android:name=".regDriverPage6"
             android:exported="false" />
         <activity
