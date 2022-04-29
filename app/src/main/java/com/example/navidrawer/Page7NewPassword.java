@@ -6,22 +6,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-public class Page3PasswordForgot extends AppCompatActivity {
+public class Page7NewPassword extends AppCompatActivity {
 
-    Button reset;
+    Button reset2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page3_password_forgot);
+        setContentView(R.layout.activity_page7_new_password);
 
         this.setTitle("Reset Password");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        reset = findViewById(R.id.btnResetPassword);
+        reset2 = findViewById(R.id.btnLogIn);
 
-        reset.setOnClickListener(view -> {
-            Intent intent = new Intent(Page3PasswordForgot.this,Page7NewPassword.class);
+        reset2.setOnClickListener(view -> {
+            Intent intent = new Intent(Page7NewPassword.this,Page8NewPassword.class);
             startActivity(intent);
         });
     }
