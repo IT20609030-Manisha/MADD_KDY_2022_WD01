@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "930836615796",
+    "project_id": "navidrawer-1957e",
+    "storage_bucket": "navidrawer-1957e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930836615796:android:09c5164d0c24e255e17721",
+        "android_client_info": {
+          "package_name": "com.example.navidrawer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930836615796-19emi6jqvs1k3eop17itjuk911sg42n5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCW29nUeBTr4byOzItQ9jFUJLPm1RKg2v8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930836615796-19emi6jqvs1k3eop17itjuk911sg42n5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
