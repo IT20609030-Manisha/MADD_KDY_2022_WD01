@@ -40,7 +40,7 @@
                 tools:layout_editor_absoluteY="86dp" />
 
             <EditText
-                android:id="@+id/etfname"
+                android:id="@+id/etfnamedr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvfname"
@@ -57,7 +57,7 @@
                 android:id="@+id/tvlname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/etfname"
+                android:layout_below="@id/etfnamedr"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/tvlname"
@@ -65,7 +65,7 @@
                 tools:layout_editor_absoluteY="86dp" />
 
             <EditText
-                android:id="@+id/etlname"
+                android:id="@+id/etlnamedr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvlname"
@@ -86,12 +86,12 @@
                 android:text="@string/tvemail"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
-                android:layout_below="@id/etlname"
+                android:layout_below="@id/etlnamedr"
                 tools:layout_editor_absoluteX="12dp"
                 tools:layout_editor_absoluteY="227dp" />
 
             <EditText
-                android:id="@+id/etemail"
+                android:id="@+id/etemaildr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvemail"
@@ -108,7 +108,7 @@
                 android:id="@+id/tvConNumber"
                 android:layout_width="111dp"
                 android:layout_height="23dp"
-                android:layout_below="@id/etemail"
+                android:layout_below="@id/etemaildr"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/tvContactNumber"
@@ -116,10 +116,10 @@
                 tools:layout_editor_absoluteY="304dp" />
 
             <EditText
-                android:id="@+id/editTextPhone"
+                android:id="@+id/etphonenum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/etemail"
+                android:layout_below="@id/etemaildr"
                 android:layout_toEndOf="@id/tvConNumber"
                 android:ems="10"
                 android:hint="@string/hintConNumber"
@@ -139,7 +139,7 @@
                 tools:layout_editor_absoluteY="346dp" />
 
             <EditText
-                android:id="@+id/etAdderess"
+                android:id="@+id/etAdderessdr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvAddress"
@@ -155,7 +155,7 @@
                 android:id="@+id/tvPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/etAdderess"
+                android:layout_below="@id/etAdderessdr"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/tvPassword"
@@ -166,7 +166,7 @@
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/etAdderess"
+                android:layout_below="@id/etAdderessdr"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
@@ -214,7 +214,7 @@
                 tools:layout_editor_absoluteY="549dp" />
 
             <Button
-                android:id="@+id/btnSubmit"
+                android:id="@+id/btnSubmitD"
                 android:layout_width="243dp"
                 android:layout_height="57dp"
                 android:layout_below="@id/checkBox"
