@@ -41,14 +41,14 @@
                 tools:layout_editor_absoluteY="86dp" />
 
             <EditText
-                android:id="@+id/etfname"
+                android:id="@+id/etfnamed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvregDontopic"
-                android:layout_toEndOf="@id/tvfname"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/tvfname"
                 android:ems="10"
                 android:hint="@string/hintfName"
                 android:inputType="textPersonName"
@@ -59,7 +59,7 @@
                 android:id="@+id/tvlname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/etfname"
+                android:layout_below="@id/etfnamed"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/tvlname"
@@ -67,15 +67,15 @@
                 tools:layout_editor_absoluteY="86dp" />
 
             <EditText
-                android:id="@+id/etlname"
+                android:id="@+id/etlnamed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/etfname"
-                android:layout_toEndOf="@id/tvlname"
+                android:layout_below="@id/etfnamed"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/tvlname"
                 android:ems="10"
                 android:hint="@string/hintfName"
                 android:inputType="textPersonName"
@@ -89,19 +89,19 @@
                 android:text="@string/tvemail"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
-                android:layout_below="@id/etlname"
+                android:layout_below="@id/etlnamed"
                 tools:layout_editor_absoluteX="12dp"
                 tools:layout_editor_absoluteY="227dp" />
 
             <EditText
-                android:id="@+id/etemail"
+                android:id="@+id/etemaild"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/etlname"
-                android:layout_toEndOf="@id/tvemail"
+                android:layout_below="@id/etlnamed"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/tvemail"
                 android:ems="10"
                 android:hint="@string/hintEmail"
                 android:inputType="textEmailAddress"
@@ -114,18 +114,18 @@
                 android:layout_height="23dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
-                android:layout_below="@id/etemail"
+                android:layout_below="@id/etemaild"
                 android:text="@string/tvContactNumber"
                 tools:layout_editor_absoluteX="7dp"
                 tools:layout_editor_absoluteY="304dp" />
 
             <EditText
-                android:id="@+id/etConnum"
+                android:id="@+id/etConnumd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/etemail"
-                android:layout_toEndOf="@id/tvConNumber"
+                android:layout_below="@id/etemaild"
                 android:layout_marginRight="10dp"
+                android:layout_toEndOf="@id/tvConNumber"
                 android:ems="10"
                 android:hint="@string/hintConNumber"
                 android:inputType="phone"
@@ -136,7 +136,7 @@
                 android:id="@+id/tvAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/etConnum"
+                android:layout_below="@id/etConnumd"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/tvAddress"
@@ -144,14 +144,14 @@
                 tools:layout_editor_absoluteY="346dp" />
 
             <EditText
-                android:id="@+id/etAdderess"
+                android:id="@+id/etAdderessd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/etConnum"
-                android:layout_toEndOf="@id/tvAddress"
+                android:layout_below="@id/etConnumd"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/tvAddress"
                 android:ems="10"
                 android:inputType="textPostalAddress"
                 tools:layout_editor_absoluteX="9dp"
@@ -161,7 +161,7 @@
                 android:id="@+id/tvregVehtopic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/etAdderess"
+                android:layout_below="@id/etAdderessd"
                 android:gravity="center"
                 android:text="@string/RegFormVeh"
                 android:textColor="@color/black"
@@ -185,10 +185,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvregVehtopic"
+                android:layout_marginEnd="10dp"
                 android:layout_toEndOf="@id/tvVehNum"
                 android:ems="10"
-                android:layout_marginEnd="10dp"
-                android:inputType="phone"
+                android:inputType="text"
                 tools:layout_editor_absoluteX="135dp"
                 tools:layout_editor_absoluteY="297dp" />
 
@@ -208,10 +208,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/etVehNum"
-                android:layout_toEndOf="@id/tvColour"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/tvColour"
                 android:ems="10"
                 android:inputType="textPostalAddress"
                 tools:layout_editor_absoluteX="9dp"
@@ -228,23 +228,18 @@
                 tools:layout_editor_absoluteX="12dp"
                 tools:layout_editor_absoluteY="346dp" />
 
-            <Spinner
-                android:id="@+id/spinVehType"
-                android:layout_width="275dp"
-                android:layout_height="41dp"
+            <EditText
+                android:id="@+id/etVehType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/etColour"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_toEndOf="@id/tvVehType"
-                android:padding="10dp" />
+                android:layout_toEndOf="@id/tvVehType"/>
 
             <TextView
                 android:id="@+id/tvPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/spinVehType"
+                android:layout_below="@id/etVehType"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/tvPassword"
@@ -252,10 +247,10 @@
                 tools:layout_editor_absoluteY="451dp" />
 
             <EditText
-                android:id="@+id/etPassword"
+                android:id="@+id/etPasswordd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/spinVehType"
+                android:layout_below="@id/etVehType"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
@@ -270,7 +265,7 @@
                 android:id="@+id/tvConfirmPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/etPassword"
+                android:layout_below="@id/etPasswordd"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
                 android:text="@string/tvConfirmPassword"
@@ -281,7 +276,7 @@
                 android:id="@+id/etConfPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/etPassword"
+                android:layout_below="@id/etPasswordd"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
@@ -303,7 +298,7 @@
                 tools:layout_editor_absoluteY="549dp" />
 
             <Button
-                android:id="@+id/btnSubmit"
+                android:id="@+id/btnSubmitDr"
                 android:layout_width="243dp"
                 android:layout_height="57dp"
                 android:layout_below="@id/checkBox"
