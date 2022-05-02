@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddDonation">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvDonationForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="50dp"
+                android:gravity="center"
+                android:text="@string/tvDoantionForm"
+                android:textColor="@color/darkBlue"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etDonorName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvDonationForm"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:hint="@string/hintDonorName"
+                android:inputType="textPersonName"
+                android:padding="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <EditText
+                android:id="@+id/etDonorLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/etDonorName"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:hint="@string/hint_DonorLocation"
+                android:inputType="textPersonName"
+                android:padding="20dp" />
+
+            <EditText
+                android:id="@+id/etFoodTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/etDonorLocation"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:hint="@string/hint_FoodTitle"
+                android:inputType="textPersonName"
+                android:padding="20dp" />
+
+            <TextView
+                android:id="@+id/tvCat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/etFoodTitle"
+                android:layout_marginTop="10dp"
+                android:padding="20dp"
+                android:text="@string/tvCat"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/prepFood"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvCat"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:padding="0dp"
+                android:text="Prepared Food"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/bever"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/prepFood"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:padding="0dp"
+                android:text="Dry Food / Beverages"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etFoodQuantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bever"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:hint="@string/hint_FoodQty"
+                android:inputType="textPersonName"
+                android:padding="20dp" />
+
+            <EditText
+                android:id="@+id/etExpiryDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/etFoodQuantity"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:hint="@string/hint_FoodExpdate"
+                android:inputType="textPersonName"
+                android:padding="20dp" />
+
+            <EditText
+                android:id="@+id/etSpecialNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/etExpiryDate"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:hint="@string/hint_FoodSpNote"
+                android:inputType="textPersonName"
+                android:padding="20dp" />
+
+            <ImageButton
+                android:id="@+id/ibDonateImg"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_below="@id/etSpecialNote"
+                android:background="@drawable/ic_baseline_add_photo_alternate_24" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="450dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ibDonateImg"
+                android:text="@string/cb_msg"
+                android:textSize="14sp"
+                android:layout_marginLeft="20dp"/>
+
+            <Button
+                android:id="@+id/btnSubmitDonation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/checkBox"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/btnclr"
+                android:padding="15dp"
+                android:text="@string/btn_SubmitDonation" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
