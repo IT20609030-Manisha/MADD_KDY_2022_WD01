@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Page6RegistrationNeeder">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvregNeedtopic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:text="@string/RegFormNeeder"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="40dp" />
+
+    <TextView
+        android:id="@+id/tvRegNum"
+        android:layout_width="146dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvregNeedtopic"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/tvRegNo"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="304dp" />
+
+    <EditText
+        android:id="@+id/etRegNum"
+        android:layout_width="259dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvregNeedtopic"
+        android:layout_marginStart="3dp"
+        android:layout_toEndOf="@+id/tvRegNum"
+        android:ems="10"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="135dp"
+        tools:layout_editor_absoluteY="297dp" />
+
+    <TextView
+        android:id="@+id/tvOrgName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etRegNum"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/tvOrganizationName"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="86dp" />
+
+    <EditText
+        android:id="@+id/etOrgName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etRegNum"
+        android:layout_toEndOf="@id/tvOrgName"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="@string/hintfName"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="112dp" />
+
+    <TextView
+        android:id="@+id/tvemailN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvemail"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_below="@id/etOrgName"
+        tools:layout_editor_absoluteX="12dp"
+        tools:layout_editor_absoluteY="227dp" />
+
+    <EditText
+        android:id="@+id/etemailN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etOrgName"
+        android:layout_toEndOf="@id/tvemailN"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="@string/hintEmail"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="112dp" />
+
+    <TextView
+        android:id="@+id/tvConNumberN"
+        android:layout_width="111dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_below="@id/etemailN"
+        android:text="@string/tvContactNumber"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="304dp" />
+
+        <EditText
+            android:id="@+id/etConnumN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etemailN"
+            android:layout_marginRight="10dp"
+            android:layout_toEndOf="@id/tvConNumberN"
+            android:ems="10"
+            android:hint="@string/hintConNumber"
+            android:inputType="phone"
+            tools:layout_editor_absoluteX="135dp"
+            tools:layout_editor_absoluteY="297dp" />
+
+    <TextView
+        android:id="@+id/tvAddressN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etConnumN"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/tvAddress"
+        tools:layout_editor_absoluteX="12dp"
+        tools:layout_editor_absoluteY="346dp" />
+
+    <EditText
+        android:id="@+id/etAdderessN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etConnumN"
+        android:layout_toEndOf="@id/tvAddressN"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="379dp" />
+
+    <TextView
+        android:id="@+id/tvregEmtopic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etAdderessN"
+        android:gravity="center"
+        android:text="@string/RegFormEm"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="40dp" />
+
+    <TextView
+        android:id="@+id/tvNameN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvregEmtopic"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/tvName"
+        tools:layout_editor_absoluteX="12dp"
+        tools:layout_editor_absoluteY="346dp" />
+
+        <EditText
+            android:id="@+id/etNameN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvregEmtopic"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@id/tvAddressN"
+            android:ems="10"
+            android:inputType="text"
+            tools:layout_editor_absoluteX="9dp"
+            tools:layout_editor_absoluteY="379dp" />
+
+    <TextView
+        android:id="@+id/tvDes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etNameN"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/tvDesignation"
+        tools:layout_editor_absoluteX="12dp"
+        tools:layout_editor_absoluteY="346dp" />
+
+        <EditText
+            android:id="@+id/etDes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etNameN"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@id/tvDes"
+            android:ems="10"
+            android:inputType="text"
+            tools:layout_editor_absoluteX="9dp"
+            tools:layout_editor_absoluteY="379dp" />
+
+    <TextView
+        android:id="@+id/tvConNumberNN"
+        android:layout_width="111dp"
+        android:layout_height="23dp"
+        android:layout_below="@id/etDes"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/tvContactNumber"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="304dp" />
+
+        <EditText
+            android:id="@+id/etConN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etDes"
+            android:layout_toEndOf="@id/tvConNumberNN"
+            android:ems="10"
+            android:hint="@string/hintConNumber"
+            android:inputType="phone"
+            tools:layout_editor_absoluteX="135dp"
+            tools:layout_editor_absoluteY="297dp" />
+
+    <TextView
+        android:id="@+id/tvPasswordN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etConN"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/tvPassword"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="451dp" />
+
+        <EditText
+            android:id="@+id/etPasswordN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etConN"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@id/tvPasswordN"
+            android:ems="10"
+            android:hint="@string/hintPassword"
+            android:inputType="textPassword"
+            tools:layout_editor_absoluteX="139dp"
+            tools:layout_editor_absoluteY="453dp" />
+
+    <TextView
+        android:id="@+id/tvConfirmPasswordN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPasswordN"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/tvConfirmPassword"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="507dp" />
+
+    <EditText
+        android:id="@+id/etConfPasswordN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPasswordN"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@id/tvConfirmPasswordN"
+        android:ems="10"
+        android:hint="@string/hintPassword"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="139dp"
+        tools:layout_editor_absoluteY="453dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="260dp"
+        android:layout_height="42dp"
+        android:text="@string/tvCheckbox"
+        android:layout_below="@id/etConfPasswordN"
+        tools:layout_editor_absoluteX="12dp"
+        android:layout_margin="10dp"
+        tools:layout_editor_absoluteY="549dp" />
+
+        <Button
+            android:id="@+id/btnSubmitN"
+            android:layout_width="243dp"
+            android:layout_height="57dp"
+            android:layout_below="@id/checkBox"
+            android:layout_centerHorizontal="true"
+            android:background="@color/btnBackground"
+            android:backgroundTint="@color/btnclr"
+            android:drawableTint="#000000"
+            android:text="@string/btnSubmit"
+            android:textColor="@color/LoginHintColor"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="607dp" />
+
+    </RelativeLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
