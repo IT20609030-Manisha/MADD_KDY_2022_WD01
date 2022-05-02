@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NaviDrawer">
         <activity
+            android:name=".AddDonation"
+            android:exported="false" />
+        <activity
             android:name=".AdminDashboard"
             android:exported="false" />
         <activity
