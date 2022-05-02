@@ -35,5 +35,84 @@
     <string name="btnEditProfile">Edit Profile</string>
     <string name="btnDeleteProfile">Delete Account</string>
 
+    //IT20609030
+    <string name="tvDoantionForm">Donation Form</string>
+    <string name="hintDonorName">Enter Your Name</string>
+    <string name="hint_DonorLocation">Enter Your Location</string>
+    <string name="hint_FoodTitle">Enter Food Title</string>
+    <string name="tvCat">Select the Category</string>
+    <string name="hint_FoodQty">Quantity : 200 people/3kg</string>
+    <string name="hint_FoodExpdate">Expiry Date</string>
+    <string name="hint_FoodSpNote">Note : collect before 3 pm</string>
+    <string name="btn_SubmitDonation">submit</string>
+    <string name="cb_msg">I assure that food quality and hygiene has maintained</string>
+
+
+
+    //IT20633622
+    <string name="login">LOGIN</string>
+    <string name="etEmailHint">Enter email</string>
+    <string name="etPassword">Enter Password</string>
+    <string name="btnCreateAccount">CREATE AN ACCOUNT</string>
+    <string name="btnGmail">LOGIN WITH GMAIL</string>
+    <string name="tvForgotPassword">Forgot Password?</string>
+    <string name="btnNeeder">Needer</string>
+    <string name="btnDriver">Driver</string>
+    <string name="btnDonor">Donor</string>
+    <string name="SelectionText">Join With us as a.......</string>
+    <string name="forgotpassword">Forgot Password?</string>
+    <string name="passwordText">Please enter your registered email address</string>
+    <string name="btnResetPassword">RESET PASSWORD</string>
+    <string name="RegForm">Personal Details</string>
+    <string name="tvfname">First Name</string>
+    <string name="tvlname">Last Name</string>
+    <string name="tvemail">Email</string>
+    <string name="tvContactNumber">Contact Number</string>
+    <string name="tvAddress">Address</string>
+    <string name="tvPassword">Password</string>
+    <string name="tvConfirmPassword">Confirm Password</string>
+    <string name="btnSubmit">Submit</string>
+    <string name="tvCheckbox">I agree to your terms and conditions</string>
+    <string name="hintfName">Enter Name</string>
+    <string name="hintEmail">Enter email</string>
+    <string name="hintemail">abc@gmail.com</string>
+    <string name="hintConNumber">+94818974231</string>
+    <string name="hintPassword">........</string>
+    <string name="tvRegNo">Registration Number</string>
+    <string name="tvOrganizationName">Organization Name</string>
+    <string name="tvName">Name</string>
+    <string name="tvDesignation">Designation</string>
+    <string name="tvEmergency">Emergency Details</string>
+    <string name="ethintpassword">Enter new password</string>
+    <string name="tvPostVacancies">Post Vacancies</string>
+    <string name="tvVacancyType">Vacancy type</string>
+    <string name="tvRbtn1">Donor</string>
+    <string name="tvRbtn2">Driver</string>
+    <string name="tvVacLoc">Location</string>
+    <string name="tvVehicleType">Vahicle Type</string>
+    <string-array name="spinVehType">
+        <item>Select.....</item>
+        <item>Bicycle</item>
+        <item>Three wheeler</item>
+        <item>Lorry</item>
+        <item>Van</item>
+    </string-array>
+    <string name="tvAvail">Availability</string>
+    <string name="tvuplaoImage">Upload Image</string>
+    <string name="tvDescription">Description</string>
+    <string name="tvtopic11">Share your review with us</string>
+    <string name="btnAddReview">Add Review</string>
+    <string name="title_activity_page10_display_vacancies">Page10DisplayVacancies</string>
+    <string name="TabDonor">Donor</string>
+    <string name="TabDriver">Driver</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="RegFormVeh">Vehicle Details</string>
+    <string name="tvVehNum">Vehicle Reg. No.</string>
+    <string name="tvColour">Vahicle Colour</string>
+    <string name="RegFormEm">Emergency Contacts</string>
+    <string name="RegFormNeeder">Organization Details</string>
+    <string name="tvtopic12">All Posts</string>
+
 
 </resources>
