@@ -35,5 +35,17 @@
     <string name="btnEditProfile">Edit Profile</string>
     <string name="btnDeleteProfile">Delete Account</string>
 
+    //IT20609030
+    <string name="tvDoantionForm">Donation Form</string>
+    <string name="hintDonorName">Enter Your Name</string>
+    <string name="hint_DonorLocation">Enter Your Location</string>
+    <string name="hint_FoodTitle">Enter Food Title</string>
+    <string name="tvCat">Select the Category</string>
+    <string name="hint_FoodQty">Quantity : 200 people/3kg</string>
+    <string name="hint_FoodExpdate">Expiry Date</string>
+    <string name="hint_FoodSpNote">Note : collect before 3 pm</string>
+    <string name="btn_SubmitDonation">submit</string>
+    <string name="cb_msg">I assure that food quality and hygiene has maintained</string>
+
 
 </resources>
