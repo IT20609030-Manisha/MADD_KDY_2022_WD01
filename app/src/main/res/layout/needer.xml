@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/tvNOrgName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Sewana Adult House "
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textSize="26sp"/>
+
+
+            <TextView
+                android:id="@+id/tvNOregnum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="KDY/45/23"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_gravity="center"/>
+
+
+            <TextView
+                android:id="@+id/tvNOaddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No.56, Kandy"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:layout_gravity="center"/>
+
+
+
+            <TextView
+                android:id="@+id/tvNOtelNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0123456789"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvNOemail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hjk@gmail.com"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Emergency Contact"
+                android:textSize="22sp"
+                android:layout_marginTop="18dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvEmerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Kamal De Silva"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvEmerdes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Manager"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvEmerConnum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="0777951263"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvEmerPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="As123!"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_gravity="center"/>
+
+            <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/btnAccept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Accept" />
+
+                <Button
+                    android:id="@+id/btnDecline"
+                    android:layout_width="128dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="89dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="33dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_toEndOf="@id/btnAccept"
+                    android:text="Decline" />
+
+
+
+            </RelativeLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
