@@ -27,7 +27,7 @@ public class RecyclerviewDonAdList extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Donation"),DonationModel.class)
                         .build();
 
-        adapter = new PostDonAdminAdapter(options);
+        adapter = new PostDonAdminAdapter(options, this);
         recyclerView.setAdapter(adapter);
     }
 
