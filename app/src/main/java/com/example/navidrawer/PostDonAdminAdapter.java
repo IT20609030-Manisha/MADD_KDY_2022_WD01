@@ -51,6 +51,24 @@ public class PostDonAdminAdapter extends FirebaseRecyclerAdapter<DonationModel,P
         //get image from firebase
         Picasso.get().load(imageUri).into(holder.imageAdd);
 
+        //delete
+        holder.donationDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                FirebaseDatabase.getInstance().getReference().child("Donation")
+                        .child(getRef(position).getKey())
+                        .removeValue()
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                Toast.makeText(context, "Deleted Successfully", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            }
+        });
+
+        //update
         holder.donationUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -129,7 +147,7 @@ public class PostDonAdminAdapter extends FirebaseRecyclerAdapter<DonationModel,P
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvdonName, tvdonLocation, tvfoodTitle,tvfoodCat, tvfoodQty, tvexpDate, tvnote, tvstatus;
-        ImageView imageAdd, donationUpdate;
+        ImageView imageAdd, donationUpdate, donationDelete;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvdonName = itemView.findViewById(R.id.tv_donorNameRetrive);
@@ -142,6 +160,7 @@ public class PostDonAdminAdapter extends FirebaseRecyclerAdapter<DonationModel,P
             tvstatus = itemView.findViewById(R.id.tv_foodStatusRetrive);
             imageAdd = itemView.findViewById(R.id.image_ViewDonation);
             donationUpdate = itemView.findViewById(R.id.image_DonEdit);
+            donationDelete = itemView.findViewById(R.id.image_DonDelete);
 
         }
     }
