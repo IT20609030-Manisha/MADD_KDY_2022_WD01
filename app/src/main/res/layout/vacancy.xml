@@ -14,59 +14,32 @@
         android:orientation="vertical">
 
 
-        <LinearLayout
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_gravity="center"
+            android:text=" Vacancies for Drivers "
+            android:textAlignment="center"
+            android:textSize="26sp" />
 
             <TextView
                 android:layout_width="wrap_content"
+                android:layout_gravity="center"
                 android:layout_height="wrap_content"
-                android:text=" Vacancies for => "
+                android:text="Inviting to Volunteers around "
                 android:textColor="@color/black"
-                android:textSize="26sp" />
-
-            <TextView
-                android:id="@+id/tvVacancyType"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:text=" Donor "
-                android:textColor="@color/black"
-                android:textStyle="bold"
                 android:textSize="26sp"/>
 
-
-
-
-
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvlocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" around "
-                android:textColor="@color/black"
-                android:textSize="26sp"/>
-
-            <TextView
-                android:id="@+id/tvlocation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:text="Kandy"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="26sp"/>
-
-        </LinearLayout>
+            android:layout_gravity="center"
+            android:text="Kandy"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -94,13 +67,32 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/update_btn_Vacancy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update"
+                android:layout_marginRight="30dp"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/delete_btn_Vacancy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:layout_marginLeft="30dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
 
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Join With Us"
-            android:layout_margin="20dp"
-            android:layout_gravity="end"/>
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>

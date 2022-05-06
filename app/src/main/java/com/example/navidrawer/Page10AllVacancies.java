@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.navidrawer.model.Vacancy;
 import com.example.navidrawer.model.VacancyAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,38 +23,48 @@ import java.util.ArrayList;
 public class Page10AllVacancies extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    DatabaseReference database;
     VacancyAdapter vacancyAdapter;
-    ArrayList<Vacancy> list;
+    FloatingActionButton addFAB;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page10_all_vacancies);
 
+        this.setTitle("Vacancies");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        addFAB = findViewById(R.id.idFABAddVacancy);
+
+        addFAB.setOnClickListener(view -> {
+            Intent intent = new Intent(Page10AllVacancies.this,Page9AddVacancies.class);
+            startActivity(intent);
+        });
+
         recyclerView = findViewById(R.id.vacancyList);
-        database = FirebaseDatabase.getInstance().getReference("Vacancy");
-        recyclerView.setHasFixedSize(true);
+        //database = FirebaseDatabase.getInstance().getReference("Vacancy");
+        //recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        list = new ArrayList<>();
-        vacancyAdapter = new VacancyAdapter(this,list);
+        FirebaseRecyclerOptions<Vacancy> options=
+                new FirebaseRecyclerOptions.Builder<Vacancy>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Vacancy"),Vacancy.class)
+                        .build();
+
+        //list = new ArrayList<>();
+        vacancyAdapter = new VacancyAdapter(options,this);
         recyclerView.setAdapter(vacancyAdapter);
 
-        database.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    Vacancy vacancy = dataSnapshot.getValue(Vacancy.class);
-                    list.add(vacancy);
-                }
-                vacancyAdapter.notifyDataSetChanged();
-            }
+    }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+    protected void onStart() {
+        super.onStart();
+        vacancyAdapter.startListening();
+    }
 
-            }
-        });
+    protected void onStop() {
+        super.onStop();
+        vacancyAdapter.startListening();
     }
 }

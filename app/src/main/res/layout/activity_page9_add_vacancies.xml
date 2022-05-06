@@ -30,42 +30,10 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/tvVacancyType"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvPostVacancies"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:padding="10dp"
-                android:text="@string/tvVacancyType" />
-
-            <RadioGroup
-                android:id="@+id/Rbtngrp1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvVacancyType"
-                android:paddingStart="100dp">
-
-                <RadioButton
-                    android:id="@+id/Rbtn1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="rbClick"
-                    android:text="@string/tvRbtn1" />
-
-                <RadioButton
-                    android:id="@+id/Rbtn2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="rbClick"
-                    android:text="@string/tvRbtn2" />
-            </RadioGroup>
-
-            <TextView
                 android:id="@+id/tvVacLoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/Rbtngrp1"
+                android:layout_below="@id/tvPostVacancies"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
@@ -102,31 +70,12 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvVacAvailability"
-                android:layout_below="@id/etVehicleType"
-                android:text="@string/tvAvail"
-                android:padding="10dp"
-                android:layout_margin="10dp"/>
-
-            <EditText
-                android:id="@+id/etAvail"
-                android:layout_width="290dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="0dp"
-                android:layout_toEndOf="@id/tvVacAvailability"
-                android:layout_below="@id/etVehicleType"
-                android:ems="10"
-                android:inputType="number" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSubmit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/etAvail"
+                android:layout_below="@id/etVehicleType"
                 android:layout_centerHorizontal="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
