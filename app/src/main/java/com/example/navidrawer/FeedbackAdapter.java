@@ -1,5 +1,7 @@
 package com.example.navidrawer;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +41,7 @@ public class FeedbackAdapter extends FirebaseRecyclerAdapter<FeedbackCls, Feedba
 
 
     @Override
-    protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull FeedbackCls model) {
+    protected void onBindViewHolder(@NonNull myViewHolder holder, final int position, @NonNull FeedbackCls model) {
         holder.name.setText(model.getName());
         holder.email.setText(model.getEmail());
         holder.message.setText(model.getMessage());
@@ -95,6 +97,33 @@ public class FeedbackAdapter extends FirebaseRecyclerAdapter<FeedbackCls, Feedba
                                 });
                     }
                 });
+            }
+        });
+
+        //Delete
+        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(holder.name.getContext());
+                builder.setTitle("Are you Sure?");
+                builder.setMessage("Deleted data cannot be Undo.");
+
+                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        FirebaseDatabase.getInstance().getReference().child("FeedbackCls")
+                                .child(getRef(holder.getAdapterPosition()).getKey()).removeValue();
+
+                    }
+                });
+
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        Toast.makeText(holder.name.getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                builder.show();
             }
         });
 
