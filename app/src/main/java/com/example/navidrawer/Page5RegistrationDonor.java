@@ -1,33 +1,32 @@
 package com.example.navidrawer;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.navidrawer.model.Donor;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Page5RegistrationDonor extends AppCompatActivity {
 
-    EditText etFname, etLname, etEmail, etConNum, etAddress, etPassword;
-    Button btnsubmit;
-    DatabaseReference dbRef;
-    Donor donor;
+    private EditText etNIC, etFname, etLname, etEmail, etConNum, etAddress, etPassword;
+    private Button btnsubmit;
+    private DatabaseReference databaseReference;
+    private FirebaseDatabase firebaseDatabase;
+    private String DonorID;
+    //private Donor donor;
 
-    //method to clear all user inputs
-    private void clearControls(){
-        etFname.setText("");
-        etLname.setText("");
-        etEmail.setText("");
-        etConNum.setText("");
-        etAddress.setText("");
-        etPassword.setText("");
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,52 +36,46 @@ public class Page5RegistrationDonor extends AppCompatActivity {
         this.setTitle("Donor Registration");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        etNIC = findViewById(R.id.etnicdr);
         etFname = findViewById(R.id.etfnamedr);
         etLname = findViewById(R.id.etlnamedr);
         etEmail = findViewById(R.id.etemaildr);
         etConNum = findViewById(R.id.etphonenum);
         etAddress = findViewById(R.id.etAdderessdr);
-        etPassword = findViewById(R.id.etPassword);
+
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("Donor");
 
         btnsubmit = findViewById(R.id.btnSubmitD);
 
-        donor = new Donor();
+        btnsubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String NIC = etNIC.getText().toString();
+                String FirstName = etFname.getText().toString();
+                String LastName = etLname.getText().toString();
+                String Email = etEmail.getText().toString();
+                String ContactNum = etConNum.getText().toString();
+                String Address = etAddress.getText().toString();
+                String Password = etPassword.getText().toString();
+                DonorID = NIC;
 
-        btnsubmit.setOnClickListener(view -> {
-            dbRef = FirebaseDatabase.getInstance().getReference().child("Donor");
+                Donor donor = new Donor(NIC, FirstName, LastName, Email, ContactNum, Address, Password, DonorID);
 
-            try {
-                if (TextUtils.isEmpty(etFname.getText().toString()))
-                    Toast.makeText(getApplicationContext(), "Please enter the first name", Toast.LENGTH_SHORT).show();
-                else if (TextUtils.isEmpty(etLname.getText().toString()))
-                    Toast.makeText(getApplicationContext(), "Please enter the last name", Toast.LENGTH_SHORT).show();
-                else if (TextUtils.isEmpty(etEmail.getText().toString()))
-                    Toast.makeText(getApplicationContext(), "Please enter the email address", Toast.LENGTH_SHORT).show();
-                else if (TextUtils.isEmpty(etConNum.getText().toString()))
-                    Toast.makeText(getApplicationContext(), "Please enter the Contact Number", Toast.LENGTH_SHORT).show();
-                else if (TextUtils.isEmpty(etAddress.getText().toString()))
-                    Toast.makeText(getApplicationContext(), "Please enter the Address", Toast.LENGTH_SHORT).show();
-                else if (TextUtils.isEmpty(etPassword.getText().toString()))
-                    Toast.makeText(getApplicationContext(), "Please enter the Password", Toast.LENGTH_SHORT).show();
-                else {
-                    donor.setFirstName(etFname.getText().toString().trim());
-                    donor.setLastName(etLname.getText().toString().trim());
-                    donor.setAddress(etAddress.getText().toString().trim());
-                    donor.setContactNumber(Integer.parseInt(etConNum.getText().toString().trim()));
-                    donor.setAddress(etAddress.getText().toString().trim());
-                    donor.setPassword(etPassword.getText().toString().trim());
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        databaseReference.child(DonorID).setValue(donor);
+                        Toast.makeText(Page5RegistrationDonor.this, "Added Successfully..", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(Page5RegistrationDonor.this,Page1LoginMain.class));
+                    }
 
-
-                    //insert into the database
-                    dbRef.push().setValue(donor);
-                    //dbRef.child("std1").setValue(std);
-
-                    //feedback to the user via toast
-                    Toast.makeText(getApplicationContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
-                    clearControls();
-                }
-            } catch (NumberFormatException e) {
-                Toast.makeText(getApplicationContext(), "Invalid Contact Number", Toast.LENGTH_SHORT).show();
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(Page5RegistrationDonor.this, "Failed....", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
     }

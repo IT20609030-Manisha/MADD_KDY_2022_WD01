@@ -27,6 +27,9 @@ public class UserRegistration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_registration);
 
+        this.setTitle("Create Account");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         username = findViewById(R.id.register_edit_username);
         password = findViewById(R.id.register_edit_password);
         confPassword = findViewById(R.id.register_edit_Confpassword);

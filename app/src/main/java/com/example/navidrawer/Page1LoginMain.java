@@ -36,7 +36,7 @@ public class Page1LoginMain extends AppCompatActivity {
         etUserEmail = findViewById(R.id.etLoginEmail);
         etUserPassword = findViewById(R.id.etLoginPasssword);
         btnLogin = findViewById(R.id.btnLogIn);
-        tvForgotPassword = findViewById(R.id.tvForgotPassword);
+        //tvForgotPassword = findViewById(R.id.tvForgotPassword);
         mAuth = FirebaseAuth.getInstance();
         btnCreateAccount = findViewById(R.id.btnCreateAccount);
 

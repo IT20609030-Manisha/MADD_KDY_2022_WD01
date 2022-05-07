@@ -1,21 +1,24 @@
 package com.example.navidrawer.model;
 
-public class Driver {
+import android.os.Parcel;
+import android.os.Parcelable;
 
+public class Driver implements Parcelable {
+
+    private String NIC;
     private String Firstname;
     private String Lastname;
     private String Email;
-    private Integer ContactNumber;
+    private String ContactNumber;
     private String Address;
     private String VahicleRegNo;
     private String VehicleColour;
     private String VehicleType;
     private String Password;
+    private String DriverID;
 
-    public Driver() {
-    }
-
-    public Driver(String firstname, String lastname, String email, Integer contactNumber, String address, String vahicleRegNo, String vehicleColour, String vehicleType, String password) {
+    public Driver(String NIC, String firstname, String lastname, String email, String contactNumber, String address, String vahicleRegNo, String vehicleColour, String vehicleType, String password, String driverID) {
+        this.NIC = NIC;
         Firstname = firstname;
         Lastname = lastname;
         Email = email;
@@ -25,6 +28,44 @@ public class Driver {
         VehicleColour = vehicleColour;
         VehicleType = vehicleType;
         Password = password;
+        DriverID = driverID;
+    }
+
+    public Driver() {
+    }
+
+    protected Driver(Parcel in) {
+        NIC = in.readString();
+        Firstname = in.readString();
+        Lastname = in.readString();
+        Email = in.readString();
+        ContactNumber = in.readString();
+        Address = in.readString();
+        VahicleRegNo = in.readString();
+        VehicleColour = in.readString();
+        VehicleType = in.readString();
+        Password = in.readString();
+        DriverID = in.readString();
+    }
+
+    public static final Creator<Driver> CREATOR = new Creator<Driver>() {
+        @Override
+        public Driver createFromParcel(Parcel in) {
+            return new Driver(in);
+        }
+
+        @Override
+        public Driver[] newArray(int size) {
+            return new Driver[size];
+        }
+    };
+
+    public String getNIC() {
+        return NIC;
+    }
+
+    public void setNIC(String NIC) {
+        this.NIC = NIC;
     }
 
     public String getFirstname() {
@@ -51,11 +92,11 @@ public class Driver {
         Email = email;
     }
 
-    public Integer getContactNumber() {
+    public String getContactNumber() {
         return ContactNumber;
     }
 
-    public void setContactNumber(Integer contactNumber) {
+    public void setContactNumber(String contactNumber) {
         ContactNumber = contactNumber;
     }
 
@@ -97,5 +138,33 @@ public class Driver {
 
     public void setPassword(String password) {
         Password = password;
+    }
+
+    public String getDriverID() {
+        return DriverID;
+    }
+
+    public void setDriverID(String driverID) {
+        DriverID = driverID;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(NIC);
+        parcel.writeString(Firstname);
+        parcel.writeString(Lastname);
+        parcel.writeString(Email);
+        parcel.writeString(ContactNumber);
+        parcel.writeString(Address);
+        parcel.writeString(VahicleRegNo);
+        parcel.writeString(VehicleColour);
+        parcel.writeString(VehicleType);
+        parcel.writeString(Password);
+        parcel.writeString(DriverID);
     }
 }

@@ -30,6 +30,14 @@ public class Page2SelectAccount extends AppCompatActivity {
             startActivity(intent);
         });
 
+        /*
+        btnNeeder.setOnClickListener(view -> {
+            Intent intent = new Intent(Page2SelectAccount.this,Page6RegistrationNeeder.class);
+            startActivity(intent);
+        });
+
+         */
+
         btnNeeder.setOnClickListener(view -> {
             Intent intent = new Intent(Page2SelectAccount.this,Page6RegistrationNeeder.class);
             startActivity(intent);
