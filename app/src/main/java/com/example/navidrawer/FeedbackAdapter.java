@@ -4,7 +4,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,8 +14,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.navidrawer.model.FeedbackCls;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class FeedbackAdapter extends FirebaseRecyclerAdapter<FeedbackCls, FeedbackAdapter.myViewHolder>{
@@ -28,12 +36,15 @@ public class FeedbackAdapter extends FirebaseRecyclerAdapter<FeedbackCls, Feedba
         super(options);
     }
 
+
+
     @Override
     protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull FeedbackCls model) {
         holder.name.setText(model.getName());
         holder.email.setText(model.getEmail());
         holder.message.setText(model.getMessage());
 
+        //Update
         holder.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,7 +53,48 @@ public class FeedbackAdapter extends FirebaseRecyclerAdapter<FeedbackCls, Feedba
                         .setExpanded(true,1200)
                         .create();
 
+                //dialogPlus.show();
+
+                View view1 = dialogPlus.getHolderView();
+
+                EditText name = view1.findViewById(R.id.txtName);
+                EditText email = view1.findViewById(R.id.txtEmail);
+                EditText message = view1.findViewById(R.id.txtMessage);
+
+                Button btnUpdate = view1.findViewById(R.id.btnUpdate);
+
+                name.setText(model.getName());
+                email.setText(model.getEmail());
+                message.setText(model.getMessage());
+
                 dialogPlus.show();
+
+                btnUpdate.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Map<String,Object> map = new HashMap<>();
+                        map.put("name",name.getText().toString());
+                        map.put("email",email.getText().toString());
+                        map.put("message",message.getText().toString());
+
+                        FirebaseDatabase.getInstance().getReference().child("FeedbackCls")
+                                .child(getRef(holder.getAdapterPosition()).getKey()).updateChildren(map)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void unused) {
+                                        Toast.makeText(holder.name.getContext(), "Data Updated Successfully.", Toast.LENGTH_SHORT).show();
+                                        dialogPlus.dismiss();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(Exception e) {
+                                        Toast.makeText(holder.name.getContext(), "Error While Updating.", Toast.LENGTH_SHORT).show();
+                                        dialogPlus.dismiss();
+                                    }
+                                });
+                    }
+                });
             }
         });
 
