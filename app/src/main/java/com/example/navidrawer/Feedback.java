@@ -49,9 +49,6 @@ public class Feedback extends AppCompatActivity {
 
         btnSend.setOnClickListener(view -> {
             dbRef = FirebaseDatabase.getInstance().getReference().child("FeedbackCls");
-            Intent i = new Intent(Feedback.this, FeedbackView.class);
-            startActivity(i);
-
             try {
                 if (TextUtils.isEmpty(etPersonName.getText().toString()))
                     Toast.makeText(getApplicationContext(), "Please enter your Name", Toast.LENGTH_SHORT).show();
@@ -72,10 +69,15 @@ public class Feedback extends AppCompatActivity {
                     //feedback to the user via toast
                     Toast.makeText(getApplicationContext(), "Feedback saved successfully", Toast.LENGTH_SHORT).show();
                     clearControls();
+
+                    Intent i = new Intent(Feedback.this, FeedbackView.class);
+                    startActivity(i);
                 }
             } catch (NumberFormatException e) {
                 Toast.makeText(getApplicationContext(), "Invalid Contact Number", Toast.LENGTH_SHORT).show();
             }
+
+
         });
 
     }
