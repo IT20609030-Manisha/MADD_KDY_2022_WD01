@@ -43,7 +43,10 @@ public class UserRegistration extends AppCompatActivity {
                 String Password = password.getText().toString();
                 String ConfPassword = confPassword.getText().toString();
 
-                if(!Password.equals(ConfPassword)){
+                if(!validatePassword() | !validateUsername()){
+                    return;
+                }
+                else if(!Password.equals(ConfPassword)){
                     Toast.makeText(UserRegistration.this, "Passsword is not matching...", Toast.LENGTH_SHORT).show();
                 }else if(TextUtils.isEmpty(UserName) && TextUtils.isEmpty(Password) && TextUtils.isEmpty(ConfPassword)){
                     Toast.makeText(UserRegistration.this, "Please add Credentials....", Toast.LENGTH_SHORT).show();
@@ -64,5 +67,45 @@ public class UserRegistration extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private boolean validateUsername() {
+        String val = username.getText().toString().trim();
+        String checkspaces = "Aw{1,20}z";
+
+        if (val.length() > 20) {
+            username.setError("Username is too large!");
+            return false;
+        } else if (!val.matches(checkspaces)) {
+            username.setError("No White spaces are allowed!");
+            return false;
+        } else {
+            username.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validatePassword() {
+        String val = password.getText().toString().trim();
+        String checkPassword = "^" +
+                //"(?=.*[0-9])" +         //at least 1 digit
+                //"(?=.*[a-z])" +         //at least 1 lower case letter
+                //"(?=.*[A-Z])" +         //at least 1 upper case letter
+                "(?=.*[a-zA-Z])" +      //any letter
+                //"(?=.*[@#$%^&+=])" +    //at least 1 special character
+                "(?=S+$)" +           //no white spaces
+                ".{4,}" +               //at least 4 characters
+                "$";
+
+        if (val.isEmpty()) {
+            password.setError("Field can not be empty");
+            return false;
+        } else if (!val.matches(checkPassword)) {
+            password.setError("Password should contain 4 characters!");
+            return false;
+        } else {
+            password.setError(null);
+            return true;
+        }
     }
 }
