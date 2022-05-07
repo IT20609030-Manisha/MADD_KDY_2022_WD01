@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserRegistration">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/register_edit_username"
+        android:inputType="textEmailAddress"
+        android:importantForAutofill="no"
+        android:layout_margin="20dp"
+        android:padding="15dp"
+        android:hint="Enter Username"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="14dp">
+    </EditText>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_edit_username"
+        android:id="@+id/register_edit_password"
+        android:inputType="textPassword"
+        android:hint="Enter Password"
+        android:layout_margin="20dp"
+        android:padding="15dp"
+        android:importantForAutofill="no"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="14dp">
+    </EditText>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_edit_password"
+        android:id="@+id/register_edit_Confpassword"
+        android:inputType="textPassword"
+        android:hint="Confirm Password"
+        android:layout_margin="20dp"
+        android:padding="15dp"
+        android:importantForAutofill="no"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="14dp">
+    </EditText>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/register_btn"
+        android:layout_below="@id/register_edit_Confpassword"
+        android:layout_margin="20dp"
+        android:padding="15dp"/>
+
+</RelativeLayout>
