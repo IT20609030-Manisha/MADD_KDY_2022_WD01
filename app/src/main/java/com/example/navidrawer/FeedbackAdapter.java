@@ -3,6 +3,7 @@ package com.example.navidrawer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,7 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.navidrawer.model.FeedbackCls;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-
+import com.orhanobut.dialogplus.DialogPlus;
+import com.orhanobut.dialogplus.ViewHolder;
 
 
 public class FeedbackAdapter extends FirebaseRecyclerAdapter<FeedbackCls, FeedbackAdapter.myViewHolder>{
@@ -32,6 +34,18 @@ public class FeedbackAdapter extends FirebaseRecyclerAdapter<FeedbackCls, Feedba
         holder.email.setText(model.getEmail());
         holder.message.setText(model.getMessage());
 
+        holder.btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final DialogPlus dialogPlus = DialogPlus.newDialog(holder.name.getContext())
+                        .setContentHolder(new ViewHolder(R.layout.update_popup))
+                        .setExpanded(true,1200)
+                        .create();
+
+                dialogPlus.show();
+            }
+        });
+
     }
 
     @NonNull
@@ -46,6 +60,9 @@ public class FeedbackAdapter extends FirebaseRecyclerAdapter<FeedbackCls, Feedba
 
         TextView name,email,message;
 
+        Button btnEdit, btnDelete;
+
+
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -53,6 +70,9 @@ public class FeedbackAdapter extends FirebaseRecyclerAdapter<FeedbackCls, Feedba
             name = (TextView) itemView.findViewById(R.id.txtName);
             email = (TextView) itemView.findViewById(R.id.txtEmail);
             message = (TextView) itemView.findViewById(R.id.txtMessage);
+
+            btnEdit = (Button) itemView.findViewById(R.id.btnEdit);
+            btnDelete = (Button) itemView.findViewById(R.id.btnDelete);
         }
     }
 
