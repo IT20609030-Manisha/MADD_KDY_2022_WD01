@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:layout_marginTop="100dp"
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
 
@@ -22,6 +22,7 @@
                 android:text=" Sewana Adult House "
                 android:textColor="@color/black"
                 android:textStyle="bold"
+                android:layout_marginTop="100dp"
                 android:layout_gravity="center"
                 android:textSize="26sp"/>
 
@@ -67,91 +68,19 @@
                 android:textSize="24sp"
                 android:layout_gravity="center"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Emergency Contact"
-                android:textSize="22sp"
-                android:layout_marginTop="18dp"
-                android:layout_gravity="center"/>
+                    <Button
+                        android:id="@+id/btnDecline"
+                        android:layout_width="128dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="89dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="33dp"
+                        android:layout_marginRight="60dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="Decline" />
 
-            <TextView
-                android:id="@+id/tvEmerName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:text="Kamal De Silva"
-                android:textColor="@color/gray"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:layout_gravity="center"/>
-
-            <TextView
-                android:id="@+id/tvEmerdes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:text="Manager"
-                android:textColor="@color/gray"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:layout_gravity="center"/>
-
-            <TextView
-                android:id="@+id/tvEmerConnum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:text="0777951263"
-                android:textColor="@color/gray"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:layout_gravity="center"/>
-
-            <TextView
-                android:id="@+id/tvEmerPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:text="As123!"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:layout_gravity="center"/>
-
-            <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
-
-            <Button
-                android:id="@+id/btnAccept"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="Accept" />
-
-                <Button
-                    android:id="@+id/btnDecline"
-                    android:layout_width="128dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="89dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginEnd="33dp"
-                    android:layout_marginRight="60dp"
-                    android:layout_marginBottom="20dp"
-                    android:layout_toEndOf="@id/btnAccept"
-                    android:text="Decline" />
-
-
-
-            </RelativeLayout>
 
     </LinearLayout>
 
