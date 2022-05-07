@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    android:elevation="6dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/txtCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtFood"
+            android:text="FoodTitle"
+            android:textSize="25sp"
+            android:layout_below="@id/txtCategory"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtPortion"
+            android:text="Portion"
+            android:textSize="25sp"
+            android:layout_below="@id/txtFood"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtNname"
+            android:text="Needer's Name"
+            android:textSize="25sp"
+            android:layout_below="@id/txtPortion"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtAddress"
+            android:text="Address"
+            android:textSize="25sp"
+            android:layout_below="@id/txtNname"
+            />
+
+        <LinearLayout
+            android:layout_below="@id/txtAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="10dp"
+                android:text="Assign Driver"
+                android:id="@+id/btnAssignDriver"
+                android:gravity="center"
+                android:textSize="21dp"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:background="@drawable/rounded"
+                android:backgroundTint="#f28500"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
