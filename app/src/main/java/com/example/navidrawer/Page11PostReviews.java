@@ -43,8 +43,8 @@ public class Page11PostReviews extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        imageButton = findViewById(R.id.etimage);
-        etdes = findViewById(R.id.etdescription);
+        imageButton = findViewById(R.id.etimage_insert);
+        etdes = findViewById(R.id.etdescription_insert);
         btnInsert = findViewById(R.id.btnaddReview);
 
         mDatabase = FirebaseDatabase.getInstance();
@@ -102,7 +102,11 @@ public class Page11PostReviews extends AppCompatActivity {
                                     newPost.child("Description").setValue(des);
                                     newPost.child("image").setValue(task.getResult().toString());
                                     progressDialog.dismiss();
+
+                                    Intent i = new Intent(Page11PostReviews.this, Page12AllReviews.class);
+                                    startActivity(i);
                                 }
+
                             });
                         }
                     });

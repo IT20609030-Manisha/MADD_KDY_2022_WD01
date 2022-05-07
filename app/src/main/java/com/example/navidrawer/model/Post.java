@@ -3,7 +3,7 @@ package com.example.navidrawer.model;
 public class Post {
 
     private String date;
-    private String description;
+    private String Description;
     private String image;
 
     public Post() {
@@ -11,7 +11,7 @@ public class Post {
 
     public Post(String date, String description, String image) {
         this.date = date;
-        this.description = description;
+        this.Description = description;
         this.image = image;
     }
 
@@ -24,11 +24,11 @@ public class Post {
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.Description = description;
     }
 
     public String getImage() {
