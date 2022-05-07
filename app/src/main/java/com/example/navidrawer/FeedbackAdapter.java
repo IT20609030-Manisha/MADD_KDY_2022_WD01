@@ -111,6 +111,7 @@ public class FeedbackAdapter extends FirebaseRecyclerAdapter<FeedbackCls, Feedba
                 builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
+                        Toast.makeText(holder.name.getContext(), "Deleted Successfully.", Toast.LENGTH_SHORT).show();
                         FirebaseDatabase.getInstance().getReference().child("FeedbackCls")
                                 .child(getRef(holder.getAdapterPosition()).getKey()).removeValue();
 

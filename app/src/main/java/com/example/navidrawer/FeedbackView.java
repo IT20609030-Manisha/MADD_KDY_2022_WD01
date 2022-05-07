@@ -1,6 +1,8 @@
 package com.example.navidrawer;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.navidrawer.model.FeedbackCls;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class FeedbackView extends AppCompatActivity {
@@ -16,6 +19,7 @@ public class FeedbackView extends AppCompatActivity {
     FeedbackAdapter feedbackAdapter;
     //FirebaseRecycleAdapter firebaseRecycleAdapter;
 
+    FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,14 @@ public class FeedbackView extends AppCompatActivity {
 
         feedbackAdapter = new FeedbackAdapter((options));
         recyclerView.setAdapter(feedbackAdapter);
+
+        floatingActionButton = (FloatingActionButton)findViewById(R.id.floatingActionButton);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),Feedback.class));
+            }
+        });
     }
 
     @Override
