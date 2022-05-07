@@ -23,15 +23,24 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Page6RegistrationNeeder extends AppCompatActivity {
 
-    private EditText etRegsNo,etOrgName, etOemail, etOConNum, etOAddress, etEmName, etDes, etEmConNum, etNpassword, etaccept;
+    private EditText etRegsNo,etOrgName, etOemail, etOConNum, etOAddress, etEmName, etDes, etEmConNum;
     private Button btnSubmit;
     private DatabaseReference dbRef;
-    //Needer needertemp;
-    private String NeederID;
+    Needer needer;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
 
-
+    //method to clear all user inputs
+    private void clearControls(){
+        etRegsNo.setText("");
+        etOrgName.setText("");
+        etOemail.setText("");
+        etOConNum.setText("");
+        etOAddress.setText("");
+        etEmName.setText("");
+        etDes.setText("");
+        etEmConNum.setText("");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,44 +59,95 @@ public class Page6RegistrationNeeder extends AppCompatActivity {
         etDes = findViewById(R.id.etDes);
         etEmConNum = findViewById(R.id.etConN);
 
-
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Needer");
+        needer = new Needer();
 
         btnSubmit = findViewById(R.id.btnSubmitN);
 
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String RegistrationNumber = etRegsNo.getText().toString();
-                String OrganizationName = etOrgName.getText().toString();
-                String Email = etOemail.getText().toString();
-                String ContactNumber = etOConNum.getText().toString();
-                String Address = etOAddress.getText().toString();
-                String Name = etEmName.getText().toString();
-                String Designation = etDes.getText().toString();
-                String EmergencyContactNumber = etEmConNum.getText().toString();
-                String Password = etNpassword.getText().toString();
-                String Accept = etaccept.getText().toString();
-                NeederID = RegistrationNumber;
+        btnSubmit.setOnClickListener(view -> {
+            dbRef = FirebaseDatabase.getInstance().getReference().child("Needer");
 
-                Needer needer = new Needer(RegistrationNumber, OrganizationName,Email,ContactNumber,Address,Name,Designation,EmergencyContactNumber,Password,Accept,NeederID);
+            try {
+                if (TextUtils.isEmpty(etRegsNo.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter an Registration Number", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etOrgName.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter a Organization name", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etOemail.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter an Email", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etOConNum.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter an Contact number", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etOAddress.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter the Address", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etEmName.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter the name", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etDes.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter the Designation", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etEmConNum.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter an Contact Number", Toast.LENGTH_SHORT).show();
+                else if(!validateEmergencyContactNumber() | !validateEmail() | !validateContactNumber()){
+                    return;
+                }
+                else {
+                    needer.setRegistrationNumber(etRegsNo.getText().toString().trim());
+                    needer.setOrganizationName(etOrgName.getText().toString().trim());
+                    needer.setEmail(etOemail.getText().toString().trim());
+                    needer.setContactNumber(etOConNum.getText().toString().trim());
+                    needer.setAddress(etOAddress.getText().toString().trim());
+                    needer.setName(etEmName.getText().toString().trim());
+                    needer.setDesignation(etDes.getText().toString().trim());
+                    needer.setEmergencyContactNumber(etEmConNum.getText().toString().trim());
 
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        databaseReference.child(NeederID).setValue(needer);
-                        Toast.makeText(Page6RegistrationNeeder.this, "Added Successfully...", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(Page6RegistrationNeeder.this, Page1LoginMain.class));
-                    }
+                    //insert into the database
+                    dbRef.push().setValue(needer);
+                    //dbRef.child("std1").setValue(std);
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(Page6RegistrationNeeder.this, "Unsuccessful", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                    //feedback to the user via toast
+                    Toast.makeText(getApplicationContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
+                    clearControls();
+                }
+            } catch (NumberFormatException e) {
+                Toast.makeText(getApplicationContext(), "Invalid Contact Number", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+
+    private boolean validateEmail(){
+        String val_email = etOemail.getText().toString().trim();
+        String checkEmail = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+        if(!val_email.matches(checkEmail)){
+            etOemail.setError("Invalid email!");
+            return false;
+        }else{
+            etOemail.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateContactNumber(){
+        String val_Connumber = etOConNum.getText().toString().trim();
+        String checkConnum = "[0-9]{10}";
+
+        if(!val_Connumber.matches(checkConnum)){
+            etOConNum.setError("Invalid Contact Number!");
+            return false;
+        }else{
+            etOConNum.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateEmergencyContactNumber(){
+        String val_Connumber = etEmConNum.getText().toString().trim();
+        String checkConnum = "[0-9]{10}";
+
+        if(!val_Connumber.matches(checkConnum)){
+            etEmConNum.setError("Invalid Contact Number!");
+            return false;
+        }else{
+            etEmConNum.setError(null);
+            return true;
+        }
     }
 
 }

@@ -193,6 +193,7 @@
                 android:textColor="@color/LoginHintColor"
                 android:textSize="16sp"
                 android:textStyle="bold"
+                android:onClick="methodValidation"
                 tools:layout_editor_absoluteX="84dp"
                 tools:layout_editor_absoluteY="607dp" />
 

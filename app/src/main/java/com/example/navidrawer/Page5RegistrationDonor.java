@@ -20,12 +20,20 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Page5RegistrationDonor extends AppCompatActivity {
 
-    private EditText etNIC, etFname, etLname, etEmail, etConNum, etAddress, etPassword;
+    private EditText etNIC, etFname, etLname, etEmail, etConNum, etAddress;
     private Button btnsubmit;
-    private DatabaseReference databaseReference;
-    private FirebaseDatabase firebaseDatabase;
-    private String DonorID;
-    //private Donor donor;
+    private DatabaseReference dbRef;
+    Donor donor;
+
+    //method to clear all user inputs
+    private void clearControls(){
+        etNIC.setText("");
+        etFname.setText("");
+        etLname.setText("");
+        etEmail.setText("");
+        etConNum.setText("");
+        etAddress.setText("");
+    }
 
 
     @Override
@@ -43,40 +51,88 @@ public class Page5RegistrationDonor extends AppCompatActivity {
         etConNum = findViewById(R.id.etphonenum);
         etAddress = findViewById(R.id.etAdderessdr);
 
-
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Donor");
+        donor = new Donor();
 
         btnsubmit = findViewById(R.id.btnSubmitD);
 
-        btnsubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String NIC = etNIC.getText().toString();
-                String FirstName = etFname.getText().toString();
-                String LastName = etLname.getText().toString();
-                String Email = etEmail.getText().toString();
-                String ContactNum = etConNum.getText().toString();
-                String Address = etAddress.getText().toString();
-                String Password = etPassword.getText().toString();
-                DonorID = NIC;
+        btnsubmit.setOnClickListener(view -> {
+            dbRef = FirebaseDatabase.getInstance().getReference().child("Donor");
 
-                Donor donor = new Donor(NIC, FirstName, LastName, Email, ContactNum, Address, Password, DonorID);
+            try {
+                if (TextUtils.isEmpty(etNIC.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter the NIC", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etFname.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter the first name", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etLname.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter the last name", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etEmail.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter the email address", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etConNum.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter the Contact Number", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etAddress.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter the Address", Toast.LENGTH_SHORT).show();
+                else if(!validateNIC() | !validateEmail() | !validateContactNumber()){
+                    return;
+                }
+                else {
+                    donor.setNIC(etNIC.getText().toString().trim());
+                    donor.setFirstName(etFname.getText().toString().trim());
+                    donor.setLastName(etLname.getText().toString().trim());
+                    donor.setAddress(etAddress.getText().toString().trim());
+                    donor.setContactNumber(etConNum.getText().toString().trim());
+                    donor.setEmail(etEmail.getText().toString().trim());
 
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        databaseReference.child(DonorID).setValue(donor);
-                        Toast.makeText(Page5RegistrationDonor.this, "Added Successfully..", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(Page5RegistrationDonor.this,Page1LoginMain.class));
-                    }
+                    //insert into the database
+                    dbRef.push().setValue(donor);
+                    //dbRef.child("std1").setValue(std);
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(Page5RegistrationDonor.this, "Failed....", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                    //feedback to the user via toast
+                    Toast.makeText(getApplicationContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
+                    clearControls();
+                }
+            } catch (NumberFormatException e) {
+                Toast.makeText(getApplicationContext(), "Invalid Contact Number", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+
+    private boolean validateNIC(){
+        String val_NIC = etNIC.getText().toString().trim();
+        String checkNIC = "[0-9]{12}";
+
+        if(!val_NIC.matches(checkNIC)){
+            etNIC.setError("Invalid NIC format...");
+            return false;
+        }else{
+            etNIC.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateEmail(){
+        String val_email = etEmail.getText().toString().trim();
+        String checkEmail = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+        if(!val_email.matches(checkEmail)){
+            etEmail.setError("Invalid email!");
+            return false;
+        }else{
+            etEmail.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateContactNumber(){
+        String val_Connumber = etConNum.getText().toString().trim();
+        String checkConnum = "[0-9]{10}";
+
+        if(!val_Connumber.matches(checkConnum)){
+            etConNum.setError("Invalid Contact Number!");
+            return false;
+        }else{
+            etConNum.setError(null);
+            return true;
+        }
     }
 }

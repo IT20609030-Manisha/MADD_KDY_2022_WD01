@@ -3,7 +3,7 @@ package com.example.navidrawer.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Donor implements Parcelable {
+public class Donor{
 
     private String NIC;
     private String FirstName;
@@ -12,12 +12,11 @@ public class Donor implements Parcelable {
     private String ContactNumber;
     private String Address;
     private String Password;
-    private String DonorID;
 
     public Donor() {
     }
 
-    public Donor(String NIC, String firstName, String lastName, String email, String contactNumber, String address, String password, String donorID) {
+    public Donor(String NIC, String firstName, String lastName, String email, String contactNumber, String address, String password) {
         this.NIC = NIC;
         FirstName = firstName;
         LastName = lastName;
@@ -25,31 +24,7 @@ public class Donor implements Parcelable {
         ContactNumber = contactNumber;
         Address = address;
         Password = password;
-        DonorID = donorID;
     }
-
-    protected Donor(Parcel in) {
-        NIC = in.readString();
-        FirstName = in.readString();
-        LastName = in.readString();
-        Email = in.readString();
-        ContactNumber = in.readString();
-        Address = in.readString();
-        Password = in.readString();
-        DonorID = in.readString();
-    }
-
-    public static final Creator<Donor> CREATOR = new Creator<Donor>() {
-        @Override
-        public Donor createFromParcel(Parcel in) {
-            return new Donor(in);
-        }
-
-        @Override
-        public Donor[] newArray(int size) {
-            return new Donor[size];
-        }
-    };
 
     public String getNIC() {
         return NIC;
@@ -107,28 +82,4 @@ public class Donor implements Parcelable {
         Password = password;
     }
 
-    public String getDonorID() {
-        return DonorID;
-    }
-
-    public void setDonorID(String donorID) {
-        DonorID = donorID;
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(NIC);
-        parcel.writeString(FirstName);
-        parcel.writeString(LastName);
-        parcel.writeString(Email);
-        parcel.writeString(ContactNumber);
-        parcel.writeString(Address);
-        parcel.writeString(Password);
-        parcel.writeString(DonorID);
-    }
 }

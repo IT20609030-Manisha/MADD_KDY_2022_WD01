@@ -22,15 +22,12 @@ import com.google.firebase.database.ValueEventListener;
 public class Page4RegistrationDriver extends AppCompatActivity {
 
 
-    private EditText etNIC,etFname, etLname, etEmail, etConNum, etAddress, etregNo, etvehCol, etVehType,etPassword;
+    private EditText etNIC,etFname, etLname, etEmail, etConNum, etAddress, etregNo, etvehCol, etVehType;
     private Button btnsubmit;
     private DatabaseReference dbRef;
     private Driver driver;
-    private DatabaseReference databaseReference;
-    private FirebaseDatabase firebaseDatabase;
-    private String DriverID;
 
-    /*
+
     //method to clear all user inputs
     private void clearControls(){
         etFname.setText("");
@@ -41,12 +38,11 @@ public class Page4RegistrationDriver extends AppCompatActivity {
         etregNo.setText("");
         etVehType.setText("");
         etvehCol.setText("");
-        etPassword.setText("");
     }
 
-     */
 
-    @SuppressLint("WrongViewCast")
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,42 +63,99 @@ public class Page4RegistrationDriver extends AppCompatActivity {
 
         btnsubmit = findViewById(R.id.btnSubmitDr);
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Driver");
+        driver = new Driver();
 
-        //driver = new Driver();
+        btnsubmit.setOnClickListener(view -> {
+            dbRef = FirebaseDatabase.getInstance().getReference().child("Driver");
 
-        btnsubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String NIC = etNIC.getText().toString();
-                String FirstName = etFname.getText().toString();
-                String LastName = etLname.getText().toString();
-                String Email = etEmail.getText().toString();
-                String ContactNum = etConNum.getText().toString();
-                String Address = etAddress.getText().toString();
-                String RegNumber = etregNo.getText().toString();
-                String VehColour = etvehCol.getText().toString();
-                String VehType = etVehType.getText().toString();
-                String Password = etPassword.getText().toString();
-                DriverID = NIC;
+            try {
 
-                Driver driver = new Driver(NIC, FirstName, LastName, Email, ContactNum, Address, RegNumber, VehColour, VehType, Password, DriverID);
+                if (TextUtils.isEmpty(etNIC.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter the NIC", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etFname.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter the first name", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etLname.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter the last name", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etEmail.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter the email address", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etConNum.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter the Contact Number", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etAddress.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter the Address", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etregNo.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter the registration number", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etVehType.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter the vehicle type", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty(etvehCol.getText().toString()))
+                    Toast.makeText(getApplicationContext(), "Please enter the vehicle colour", Toast.LENGTH_SHORT).show();
+                else if(!validateNIC() | !validateEmail() | !validateContactNumber()){
+                    return;
+                }
+                else {
+                    driver.setVehicleColour(etNIC.getText().toString().trim());
+                    driver.setFirstname(etFname.getText().toString().trim());
+                    driver.setLastname(etLname.getText().toString().trim());
+                    driver.setEmail(etEmail.getText().toString().trim());
+                    driver.setContactNumber(etConNum.getText().toString().trim());
+                    driver.setAddress(etAddress.getText().toString().trim());
+                    driver.setVahicleRegNo(etregNo.getText().toString().trim());
+                    driver.setVehicleType(etVehType.getText().toString().trim());
+                    driver.setVehicleColour(etvehCol.getText().toString().trim());
 
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        databaseReference.child(DriverID).setValue(driver);
-                        Toast.makeText(Page4RegistrationDriver.this, "Added Successfully.....", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(Page4RegistrationDriver.this, Page1LoginMain.class));
-                    }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(Page4RegistrationDriver.this, "Registration Unsuccessfull....", Toast.LENGTH_SHORT).show();
-                    }
-                });
+
+                    //insert into the database
+                    dbRef.push().setValue(driver);
+                    //dbRef.child("std1").setValue(std);
+
+                    //feedback to the user via toast
+                    Toast.makeText(getApplicationContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
+                    clearControls();
+                }
+            } catch (NumberFormatException e) {
+                Toast.makeText(getApplicationContext(), "Invalid Contact Number", Toast.LENGTH_SHORT).show();
             }
         });
+
+    }
+
+
+    private boolean validateNIC(){
+        String val_NIC = etNIC.getText().toString().trim();
+        String checkNIC = "[0-9]{12}";
+
+        if(!val_NIC.matches(checkNIC)){
+            etNIC.setError("Invalid NIC format...");
+            return false;
+        }else{
+            etNIC.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateEmail(){
+        String val_email = etEmail.getText().toString().trim();
+        String checkEmail = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+        if(!val_email.matches(checkEmail)){
+            etEmail.setError("Invalid email!");
+            return false;
+        }else{
+            etEmail.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateContactNumber(){
+        String val_Connumber = etConNum.getText().toString().trim();
+        String checkConnum = "[0-9]{10}";
+
+        if(!val_Connumber.matches(checkConnum)){
+            etConNum.setError("Invalid Contact Number!");
+            return false;
+        }else{
+            etConNum.setError(null);
+            return true;
+        }
     }
 }

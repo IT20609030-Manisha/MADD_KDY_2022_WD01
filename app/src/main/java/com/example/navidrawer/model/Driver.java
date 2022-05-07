@@ -3,7 +3,7 @@ package com.example.navidrawer.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Driver implements Parcelable {
+public class Driver{
 
     private String NIC;
     private String Firstname;
@@ -14,10 +14,9 @@ public class Driver implements Parcelable {
     private String VahicleRegNo;
     private String VehicleColour;
     private String VehicleType;
-    private String Password;
-    private String DriverID;
 
-    public Driver(String NIC, String firstname, String lastname, String email, String contactNumber, String address, String vahicleRegNo, String vehicleColour, String vehicleType, String password, String driverID) {
+
+    public Driver(String NIC, String firstname, String lastname, String email, String contactNumber, String address, String vahicleRegNo, String vehicleColour, String vehicleType) {
         this.NIC = NIC;
         Firstname = firstname;
         Lastname = lastname;
@@ -27,38 +26,12 @@ public class Driver implements Parcelable {
         VahicleRegNo = vahicleRegNo;
         VehicleColour = vehicleColour;
         VehicleType = vehicleType;
-        Password = password;
-        DriverID = driverID;
+
     }
 
     public Driver() {
     }
 
-    protected Driver(Parcel in) {
-        NIC = in.readString();
-        Firstname = in.readString();
-        Lastname = in.readString();
-        Email = in.readString();
-        ContactNumber = in.readString();
-        Address = in.readString();
-        VahicleRegNo = in.readString();
-        VehicleColour = in.readString();
-        VehicleType = in.readString();
-        Password = in.readString();
-        DriverID = in.readString();
-    }
-
-    public static final Creator<Driver> CREATOR = new Creator<Driver>() {
-        @Override
-        public Driver createFromParcel(Parcel in) {
-            return new Driver(in);
-        }
-
-        @Override
-        public Driver[] newArray(int size) {
-            return new Driver[size];
-        }
-    };
 
     public String getNIC() {
         return NIC;
@@ -132,39 +105,4 @@ public class Driver implements Parcelable {
         VehicleType = vehicleType;
     }
 
-    public String getPassword() {
-        return Password;
-    }
-
-    public void setPassword(String password) {
-        Password = password;
-    }
-
-    public String getDriverID() {
-        return DriverID;
-    }
-
-    public void setDriverID(String driverID) {
-        DriverID = driverID;
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(NIC);
-        parcel.writeString(Firstname);
-        parcel.writeString(Lastname);
-        parcel.writeString(Email);
-        parcel.writeString(ContactNumber);
-        parcel.writeString(Address);
-        parcel.writeString(VahicleRegNo);
-        parcel.writeString(VehicleColour);
-        parcel.writeString(VehicleType);
-        parcel.writeString(Password);
-        parcel.writeString(DriverID);
-    }
 }
