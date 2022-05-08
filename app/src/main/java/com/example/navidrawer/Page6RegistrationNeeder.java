@@ -1,23 +1,34 @@
 package com.example.navidrawer;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.navidrawer.databinding.ActivityMainBinding;
+import com.example.navidrawer.model.Driver;
 import com.example.navidrawer.model.Needer;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Page6RegistrationNeeder extends AppCompatActivity {
 
-    EditText etRegsNo, etOrgName, etOemail, etOConNum, etOAddress, etEmName, etDes, etEmConNum, etNpassword, etNConPassword;
-    Button btnSubmit;
-    DatabaseReference dbRef;
+    private EditText etRegsNo,etOrgName, etOemail, etOConNum, etOAddress, etEmName, etDes, etEmConNum;
+    private Button btnSubmit;
+    private DatabaseReference dbRef;
     Needer needer;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
 
     //method to clear all user inputs
     private void clearControls(){
@@ -29,7 +40,6 @@ public class Page6RegistrationNeeder extends AppCompatActivity {
         etEmName.setText("");
         etDes.setText("");
         etEmConNum.setText("");
-        etNpassword.setText("");
     }
 
     @Override
@@ -48,11 +58,10 @@ public class Page6RegistrationNeeder extends AppCompatActivity {
         etEmName = findViewById(R.id.etNameN);
         etDes = findViewById(R.id.etDes);
         etEmConNum = findViewById(R.id.etConN);
-        etNpassword = findViewById(R.id.etPasswordN);
-
-        btnSubmit = findViewById(R.id.btnSubmitN);
 
         needer = new Needer();
+
+        btnSubmit = findViewById(R.id.btnSubmitN);
 
         btnSubmit.setOnClickListener(view -> {
             dbRef = FirebaseDatabase.getInstance().getReference().child("Needer");
@@ -74,18 +83,18 @@ public class Page6RegistrationNeeder extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please enter the Designation", Toast.LENGTH_SHORT).show();
                 else if (TextUtils.isEmpty(etEmConNum.getText().toString()))
                     Toast.makeText(getApplicationContext(), "Please enter an Contact Number", Toast.LENGTH_SHORT).show();
-                else if (TextUtils.isEmpty(etNpassword.getText().toString()))
-                    Toast.makeText(getApplicationContext(), "Please enter an Password", Toast.LENGTH_SHORT).show();
+                else if(!validateEmergencyContactNumber() | !validateEmail() | !validateContactNumber()){
+                    return;
+                }
                 else {
                     needer.setRegistrationNumber(etRegsNo.getText().toString().trim());
                     needer.setOrganizationName(etOrgName.getText().toString().trim());
                     needer.setEmail(etOemail.getText().toString().trim());
-                    needer.setContactNumber(Integer.parseInt(etOConNum.getText().toString().trim()));
+                    needer.setContactNumber(etOConNum.getText().toString().trim());
                     needer.setAddress(etOAddress.getText().toString().trim());
                     needer.setName(etEmName.getText().toString().trim());
                     needer.setDesignation(etDes.getText().toString().trim());
-                    needer.setEmergencyContactNumber(Integer.parseInt(etEmConNum.getText().toString().trim()));
-                    needer.setPassword(etNpassword.getText().toString().trim());
+                    needer.setEmergencyContactNumber(etEmConNum.getText().toString().trim());
 
                     //insert into the database
                     dbRef.push().setValue(needer);
@@ -100,4 +109,45 @@ public class Page6RegistrationNeeder extends AppCompatActivity {
             }
         });
     }
+
+
+    private boolean validateEmail(){
+        String val_email = etOemail.getText().toString().trim();
+        String checkEmail = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+        if(!val_email.matches(checkEmail)){
+            etOemail.setError("Invalid email!");
+            return false;
+        }else{
+            etOemail.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateContactNumber(){
+        String val_Connumber = etOConNum.getText().toString().trim();
+        String checkConnum = "[0-9]{10}";
+
+        if(!val_Connumber.matches(checkConnum)){
+            etOConNum.setError("Invalid Contact Number!");
+            return false;
+        }else{
+            etOConNum.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateEmergencyContactNumber(){
+        String val_Connumber = etEmConNum.getText().toString().trim();
+        String checkConnum = "[0-9]{10}";
+
+        if(!val_Connumber.matches(checkConnum)){
+            etEmConNum.setError("Invalid Contact Number!");
+            return false;
+        }else{
+            etEmConNum.setError(null);
+            return true;
+        }
+    }
+
 }

@@ -1,21 +1,23 @@
 package com.example.navidrawer.model;
 
-public class Driver {
+import android.os.Parcel;
+import android.os.Parcelable;
 
+public class Driver{
+
+    private String NIC;
     private String Firstname;
     private String Lastname;
     private String Email;
-    private Integer ContactNumber;
+    private String ContactNumber;
     private String Address;
     private String VahicleRegNo;
     private String VehicleColour;
     private String VehicleType;
-    private String Password;
 
-    public Driver() {
-    }
 
-    public Driver(String firstname, String lastname, String email, Integer contactNumber, String address, String vahicleRegNo, String vehicleColour, String vehicleType, String password) {
+    public Driver(String NIC, String firstname, String lastname, String email, String contactNumber, String address, String vahicleRegNo, String vehicleColour, String vehicleType) {
+        this.NIC = NIC;
         Firstname = firstname;
         Lastname = lastname;
         Email = email;
@@ -24,7 +26,19 @@ public class Driver {
         VahicleRegNo = vahicleRegNo;
         VehicleColour = vehicleColour;
         VehicleType = vehicleType;
-        Password = password;
+
+    }
+
+    public Driver() {
+    }
+
+
+    public String getNIC() {
+        return NIC;
+    }
+
+    public void setNIC(String NIC) {
+        this.NIC = NIC;
     }
 
     public String getFirstname() {
@@ -51,11 +65,11 @@ public class Driver {
         Email = email;
     }
 
-    public Integer getContactNumber() {
+    public String getContactNumber() {
         return ContactNumber;
     }
 
-    public void setContactNumber(Integer contactNumber) {
+    public void setContactNumber(String contactNumber) {
         ContactNumber = contactNumber;
     }
 
@@ -91,11 +105,4 @@ public class Driver {
         VehicleType = vehicleType;
     }
 
-    public String getPassword() {
-        return Password;
-    }
-
-    public void setPassword(String password) {
-        Password = password;
-    }
 }

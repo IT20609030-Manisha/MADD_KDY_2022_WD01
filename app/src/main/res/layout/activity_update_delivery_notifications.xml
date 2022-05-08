@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/orback"
+    tools:context=".UpdateDeliveryNotifications">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="354dp"
+        android:layout_height="582dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/txtPickup"
+                android:layout_width="313dp"
+                android:layout_height="145sp"
+                android:layout_marginBottom="20dp"
+                android:background="#bac4ca"
+                android:gravity="center"
+                android:text="Order has picked and it is on the way."
+                android:textColor="#0b234f"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/btnPickup"
+                android:layout_width="170dp"
+                android:layout_height="65dp"
+                android:layout_below="@id/txtPickup"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="90dp"
+                android:backgroundTint="#f28500"
+                android:gravity="center"
+                android:text="On the way"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txtDeli"
+                android:layout_width="313dp"
+                android:layout_height="145dp"
+                android:layout_marginBottom="20dp"
+                android:layout_below="@id/btnPickup"
+                android:background="#bac4ca"
+                android:gravity="center"
+                android:text="Order is Delivered."
+                android:textColor="#0b234f"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/btnDeli"
+                android:layout_width="170dp"
+                android:layout_height="65dp"
+                android:layout_below="@id/txtDeli"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="128dp"
+                android:backgroundTint="#f28500"
+                android:gravity="center"
+                android:text="Delivered"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

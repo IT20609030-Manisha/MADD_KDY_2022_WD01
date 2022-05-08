@@ -1,21 +1,23 @@
 package com.example.navidrawer.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 public class Needer {
 
     private String RegistrationNumber;
     private String OrganizationName;
     private String Email;
-    private Integer ContactNumber;
+    private String ContactNumber;
     private String Address;
     private String Name;
     private String Designation;
-    private Integer EmergencyContactNumber;
-    private String Password;
+    private String EmergencyContactNumber;
 
     public Needer() {
     }
 
-    public Needer(String registrationNumber, String organizationName, String email, Integer contactNumber, String address, String name, String designation, Integer emergencyContactNumber, String password) {
+    public Needer(String registrationNumber, String organizationName, String email, String contactNumber, String address, String name, String designation, String emergencyContactNumber) {
         RegistrationNumber = registrationNumber;
         OrganizationName = organizationName;
         Email = email;
@@ -24,7 +26,6 @@ public class Needer {
         Name = name;
         Designation = designation;
         EmergencyContactNumber = emergencyContactNumber;
-        Password = password;
     }
 
     public String getRegistrationNumber() {
@@ -51,11 +52,11 @@ public class Needer {
         Email = email;
     }
 
-    public Integer getContactNumber() {
+    public String getContactNumber() {
         return ContactNumber;
     }
 
-    public void setContactNumber(Integer contactNumber) {
+    public void setContactNumber(String contactNumber) {
         ContactNumber = contactNumber;
     }
 
@@ -83,19 +84,12 @@ public class Needer {
         Designation = designation;
     }
 
-    public Integer getEmergencyContactNumber() {
+    public String getEmergencyContactNumber() {
         return EmergencyContactNumber;
     }
 
-    public void setEmergencyContactNumber(Integer emergencyContactNumber) {
+    public void setEmergencyContactNumber(String emergencyContactNumber) {
         EmergencyContactNumber = emergencyContactNumber;
     }
 
-    public String getPassword() {
-        return Password;
-    }
-
-    public void setPassword(String password) {
-        Password = password;
-    }
 }

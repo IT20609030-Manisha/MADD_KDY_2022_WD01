@@ -1,51 +1,35 @@
 package com.example.navidrawer;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.navidrawer.model.Vacancy;
 import com.example.navidrawer.model.VacancyAdapter;
+import com.example.navidrawer.model.VacancyAdapterUser;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
+public class VacancyUserView extends AppCompatActivity {
 
-public class Page10AllVacancies extends AppCompatActivity {
-
-    RecyclerView recyclerView;
-    VacancyAdapter vacancyAdapter;
-    FloatingActionButton addFAB;
-
+    RecyclerView recyclerViewu;
+    VacancyAdapterUser vacancyAdapterUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page10_all_vacancies);
+        setContentView(R.layout.activity_vacancy_user_view);
 
         this.setTitle("Vacancies");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        addFAB = findViewById(R.id.idFABAddVacancy);
-
-        addFAB.setOnClickListener(view -> {
-            Intent intent = new Intent(Page10AllVacancies.this,Page9AddVacancies.class);
-            startActivity(intent);
-        });
-
-        recyclerView = findViewById(R.id.vacancyList);
+        recyclerViewu = findViewById(R.id.vacancyViewUser);
         //database = FirebaseDatabase.getInstance().getReference("Vacancy");
         //recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewu.setLayoutManager(new LinearLayoutManager(this));
 
         FirebaseRecyclerOptions<Vacancy> options=
                 new FirebaseRecyclerOptions.Builder<Vacancy>()
@@ -53,18 +37,17 @@ public class Page10AllVacancies extends AppCompatActivity {
                         .build();
 
         //list = new ArrayList<>();
-        vacancyAdapter = new VacancyAdapter(options,this);
-        recyclerView.setAdapter(vacancyAdapter);
-
+        vacancyAdapterUser = new VacancyAdapterUser(options,this);
+        recyclerViewu.setAdapter(vacancyAdapterUser);
     }
 
     protected void onStart() {
         super.onStart();
-        vacancyAdapter.startListening();
+        vacancyAdapterUser.startListening();
     }
 
     protected void onStop() {
         super.onStop();
-        vacancyAdapter.startListening();
+        vacancyAdapterUser.startListening();
     }
 }

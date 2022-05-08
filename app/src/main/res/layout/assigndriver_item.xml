@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    android:elevation="6dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/txtFName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtlName"
+            android:text="Last Name"
+            android:textSize="25sp"
+            android:layout_below="@id/txtFName"
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtConNu"
+            android:text="Contact Num"
+            android:textSize="25sp"
+            android:layout_below="@id/txtlName"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtVehiType"
+            android:text="Vehicle Type"
+            android:textSize="25sp"
+            android:layout_below="@id/txtConNu"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtVehiNo"
+            android:text="Vehicle No"
+            android:textSize="25sp"
+            android:layout_below="@id/txtVehiType"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtDaddress"
+            android:text="Address"
+            android:textSize="25sp"
+            android:layout_below="@id/txtVehiNo"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtEMail"
+            android:text="Email"
+            android:textSize="25sp"
+            android:layout_below="@id/txtDaddress"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtvClr"
+            android:text="V Color"
+            android:textSize="25sp"
+            android:layout_below="@id/txtEMail"
+            />
+
+
+
+
+
+        <LinearLayout
+            android:layout_below="@id/txtvClr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="10dp"
+                android:text="Assign Driver"
+                android:id="@+id/btnDriverAssign"
+                android:gravity="center"
+                android:textSize="21sp"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:background="@drawable/rounded"
+                android:backgroundTint="#f28500"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
