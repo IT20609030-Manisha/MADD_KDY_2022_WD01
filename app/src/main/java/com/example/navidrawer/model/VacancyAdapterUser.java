@@ -14,7 +14,7 @@ import com.example.navidrawer.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class VacancyAdapterUser extends FirebaseRecyclerAdapter<Vacancy,VacancyAdapterUser.ViewHolder2> {
+public class VacancyAdapterUser extends FirebaseRecyclerAdapter<Vacancy,VacancyAdapterUser.ViewHolder5> {
 
     private Context context;
 
@@ -25,24 +25,24 @@ public class VacancyAdapterUser extends FirebaseRecyclerAdapter<Vacancy,VacancyA
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull ViewHolder2 holder, int position, @NonNull Vacancy model) {
+    protected void onBindViewHolder(@NonNull ViewHolder5 holder, int position, @NonNull Vacancy model) {
         holder.Location.setText(model.getLocation());
         holder.VehicleType.setText(model.getVehicleType());
     }
 
     @NonNull
     @Override
-    public ViewHolder2 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder5 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.vacancy_user,parent,false);
 
-        return new ViewHolder2(view);
+        return new ViewHolder5(view);
     }
 
-    public class ViewHolder2 extends RecyclerView.ViewHolder {
+    public class ViewHolder5 extends RecyclerView.ViewHolder {
         TextView Location, VehicleType;
 
-        public ViewHolder2(@NonNull View itemView) {
+        public ViewHolder5(@NonNull View itemView) {
             super(itemView);
 
             Location = itemView.findViewById(R.id.tvlocation);
