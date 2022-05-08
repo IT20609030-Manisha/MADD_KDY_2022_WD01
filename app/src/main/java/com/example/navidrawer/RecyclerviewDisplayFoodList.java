@@ -18,6 +18,9 @@ public class RecyclerviewDisplayFoodList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recyclerview_display_food_list);
 
+        this.setTitle("Find Food");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         recyclerViewFoodDisplay = findViewById(R.id.recyclerViewFood_id);
         recyclerViewFoodDisplay.setLayoutManager(new LinearLayoutManager(this));
 

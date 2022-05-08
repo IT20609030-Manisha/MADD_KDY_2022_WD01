@@ -28,13 +28,13 @@ public class PostDisplayFoodAdapter extends FirebaseRecyclerAdapter<DonationMode
 
     @Override
     protected void onBindViewHolder(@NonNull ViewHolder2 holder, int position, @NonNull DonationModel model) {
-        holder.tv_displayDonName.setText(model.getDonorName());
-        holder.tv_displayDonLocation.setText(model.getDonorLocation());
+        holder.tv_displayDonName.setText("Donor : " + model.getDonorName());
+        holder.tv_displayDonLocation.setText("Location : " + model.getDonorLocation());
         holder.tv_displayFoodTitle.setText(model.getFoodTitle());
-        holder.tv_displayCat.setText(model.getCategory());
-        holder.tv_displayQty.setText(model.getQuantity());
-        holder.tv_displayExpDate.setText(model.getExpDate());
-        holder.tv_displayStatus.setText(model.getStatus());
+        holder.tv_displayCat.setText("Category : " + model.getCategory());
+        holder.tv_displayQty.setText("Quantity : " +model.getQuantity());
+        holder.tv_displayExpDate.setText("Expire On : "+model.getExpDate());
+        holder.tv_displayStatus.setText("Donation Status : "+model.getStatus());
 
         String imageUri = model.getImage();
         //get image from firebase

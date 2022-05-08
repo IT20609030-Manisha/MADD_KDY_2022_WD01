@@ -20,8 +20,8 @@
     <ImageView
         android:layout_marginTop="5dp"
         android:layout_marginLeft="8dp"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
         android:src="@drawable/imgadd2"
         android:id="@+id/image_DisplayDonation" />
 
@@ -37,8 +37,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
             android:text="Donor's Name"
-            android:textSize="15dp"
+            android:textColor="@color/darkBlue"
+            android:textSize="15sp"
             android:id="@+id/tv_donorNameDisplay">
         </TextView>
 
@@ -47,7 +50,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Donor's Location"
-            android:textSize="15dp"
+            android:textColor="@color/darkBlue"
+            android:textSize="15sp"
             android:id="@+id/tv_donorLocationDisplay">
         </TextView>
 
@@ -55,43 +59,55 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:text="Food Title"
-            android:textSize="15dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
             android:id="@+id/tv_foodTitleDisplay"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Category"
-            android:textSize="15dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="18sp"
             android:id="@+id/tv_foodCatDisplay"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Quantity"
-            android:textSize="15dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="18sp"
             android:id="@+id/tv_foodQtyDisplay"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Expiry Date"
-            android:textSize="15dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="18sp"
             android:id="@+id/tv_foodExpDateDisplay"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Status"
-            android:textSize="15dp"
+            android:textColor="@color/FoodStatusColor"
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp"
             android:id="@+id/tv_foodStatusDisplay"/>
 
         <Button
             android:id="@+id/btnOrderFood"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
             android:text="@string/btn_OrderFood"
+            android:textSize="18sp"
             android:backgroundTint="@color/btnclr"/>
 
 
