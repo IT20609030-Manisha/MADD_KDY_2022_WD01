@@ -19,6 +19,9 @@ public class RecyclerviewDonAdList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recyclerview_don_ad_list);
 
+        this.setTitle("Food Requests");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         recyclerView = findViewById(R.id.recylclerViewdonad_id);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

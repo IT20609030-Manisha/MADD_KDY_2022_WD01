@@ -25,6 +25,9 @@ public class DonationReport extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_report);
 
+        this.setTitle("Donation Report");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         donationCount = findViewById(R.id.tv_donationCount);
 
         mDatabase = FirebaseDatabase.getInstance();

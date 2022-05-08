@@ -61,8 +61,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:text="Donor's Name"
-            android:textSize="15dp"
+            android:textSize="16sp"
             android:id="@+id/tv_donorNameRetrive">
         </TextView>
 
@@ -70,8 +71,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:text="Donor's Location"
-            android:textSize="15dp"
+            android:textSize="16sp"
             android:id="@+id/tv_donorLocationRetrive">
         </TextView>
 
@@ -79,43 +81,49 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:text="Food Title"
-            android:textSize="15dp"
+            android:textSize="16sp"
             android:id="@+id/tv_foodTitleRetrive"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:text="Category"
-            android:textSize="15dp"
+            android:textSize="16sp"
             android:id="@+id/tv_foodCatRetrive"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:text="Quantity"
-            android:textSize="15dp"
+            android:textSize="16sp"
             android:id="@+id/tv_foodQtyRetrive"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:text="Expiry Date"
-            android:textSize="15dp"
+            android:textSize="16sp"
             android:id="@+id/tv_foodExpDateRetrive"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
             android:text="Note"
-            android:textSize="15dp"
+            android:textSize="16sp"
             android:id="@+id/tv_foodNoteRetrive"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:text="Status"
-            android:textSize="15dp"
+            android:textSize="16sp"
             android:id="@+id/tv_foodStatusRetrive"/>
 
 
