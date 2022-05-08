@@ -5,19 +5,18 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 //import com.example.navidrawer.databinding.ActivityPage10DisplayVacanciesBinding;
 //import com.example.navidrawer.ui.main.SectionsPagerAdapter;
 import com.example.navidrawer.model.Post;
 import com.example.navidrawer.model.PostAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,14 +29,12 @@ import java.util.List;
 
 public class Page12AllReviews extends AppCompatActivity {
 
-    FirebaseDatabase mDatabase;
-    DatabaseReference mRef;
-    FirebaseStorage mStorage;
+
     RecyclerView recyclerView;
     PostAdapter postAdapter;
-    List<Post> postlist;
+    FloatingActionButton addFAB;
 
-    Button btnAddpost;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,52 +44,37 @@ public class Page12AllReviews extends AppCompatActivity {
         this.setTitle("Reviews");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        btnAddpost = findViewById(R.id.addPost);
+        addFAB = findViewById(R.id.idFABAddCourse);
 
-        mDatabase = FirebaseDatabase.getInstance();
-        mRef = mDatabase.getReference().child("Post");
-        mStorage = FirebaseStorage.getInstance();
-        recyclerView = findViewById(R.id.postList);
-        recyclerView.setHasFixedSize(true);
+
+        recyclerView = findViewById(R.id.postList_RecyclerView);
+      //  recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        postlist = new ArrayList<Post>();
-        postAdapter = new PostAdapter(Page12AllReviews.this,postlist);
+        FirebaseRecyclerOptions<Post> options=
+                new FirebaseRecyclerOptions.Builder<Post>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Post"),Post.class)
+                        .build();
+
+    //    postlist = new ArrayList<Post>();
+        postAdapter = new PostAdapter(options,this);
         recyclerView.setAdapter(postAdapter);
 
-        btnAddpost.setOnClickListener(view -> {
+        addFAB.setOnClickListener(view -> {
             Intent intent = new Intent(Page12AllReviews.this,Page11PostReviews.class);
             startActivity(intent);
         });
 
-        mRef.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                Post post = snapshot.getValue(Post.class);
-                postlist.add(post);
-                postAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
     }
+
+    protected void onStart() {
+        super.onStart();
+        postAdapter.startListening();
+    }
+
+    protected void onStop() {
+        super.onStop();
+        postAdapter.stopListening();
+    }
+
 }

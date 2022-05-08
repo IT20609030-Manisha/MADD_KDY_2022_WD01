@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Page1LoginMain">
+    tools:context=".Page1LoginMain"
+    android:background="@drawable/login_background">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,24 +15,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/login"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_margin="50dp"/>
+
 
             <EditText
                 android:id="@+id/etLoginEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/login"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="100dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="#30ffffff"
@@ -53,7 +44,7 @@
                 android:layout_margin="10dp"
                 android:padding="20dp"
                 android:background="#30ffffff"
-                android:drawableLeft="@android:drawable/ic_dialog_email"
+                android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
                 android:drawablePadding="20dp"
                 android:ems="10"
                 android:inputType="textPassword"
@@ -65,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/etLoginPasssword"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:backgroundTint="@color/btnBackground"
@@ -80,44 +71,16 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/btnLogIn"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/border"
                 android:backgroundTint="@color/white"
-                android:padding="20dp"
                 android:text="@string/btnCreateAccount"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btnGmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/btnCreateAccount"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/border"
-                android:backgroundTint="@color/white"
-                android:padding="20dp"
-                android:text="@string/btnGmail"
-                android:textSize="16sp"
-                android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tvForgotPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/btnGmail"
-                android:layout_margin="10dp"
-                android:padding="20dp"
-                android:layout_centerHorizontal="true"
-                android:text="@string/tvForgotPassword"
-                android:textColor="@color/LoginHintColor"
-                android:textColorHint="@color/LoginHintColor"
-                android:textSize="16sp"/>
         </RelativeLayout>
 
     </ScrollView>

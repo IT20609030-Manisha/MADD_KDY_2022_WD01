@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Page6RegistrationNeeder">
+    tools:context=".Page6RegistrationNeeder"
+    android:background="@drawable/register_background">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,7 +22,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="15dp"
         android:gravity="center"
         android:text="@string/RegFormNeeder"
         android:textColor="@color/black"
@@ -239,73 +240,12 @@
             tools:layout_editor_absoluteX="135dp"
             tools:layout_editor_absoluteY="297dp" />
 
-    <TextView
-        android:id="@+id/tvPasswordN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etConN"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/tvPassword"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="451dp" />
-
-        <EditText
-            android:id="@+id/etPasswordN"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/etConN"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_toEndOf="@id/tvPasswordN"
-            android:ems="10"
-            android:hint="@string/hintPassword"
-            android:inputType="textPassword"
-            tools:layout_editor_absoluteX="139dp"
-            tools:layout_editor_absoluteY="453dp" />
-
-    <TextView
-        android:id="@+id/tvConfirmPasswordN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etPasswordN"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        android:text="@string/tvConfirmPassword"
-        tools:layout_editor_absoluteX="9dp"
-        tools:layout_editor_absoluteY="507dp" />
-
-    <EditText
-        android:id="@+id/etConfPasswordN"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etPasswordN"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_toEndOf="@id/tvConfirmPasswordN"
-        android:ems="10"
-        android:hint="@string/hintPassword"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="139dp"
-        tools:layout_editor_absoluteY="453dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="260dp"
-        android:layout_height="42dp"
-        android:text="@string/tvCheckbox"
-        android:layout_below="@id/etConfPasswordN"
-        tools:layout_editor_absoluteX="12dp"
-        android:layout_margin="10dp"
-        tools:layout_editor_absoluteY="549dp" />
-
         <Button
             android:id="@+id/btnSubmitN"
             android:layout_width="243dp"
             android:layout_height="57dp"
-            android:layout_below="@id/checkBox"
+            android:layout_below="@id/etConN"
+            android:layout_marginTop="30dp"
             android:layout_centerHorizontal="true"
             android:background="@color/btnBackground"
             android:backgroundTint="@color/btnclr"

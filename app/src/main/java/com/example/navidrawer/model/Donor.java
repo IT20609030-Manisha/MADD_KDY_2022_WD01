@@ -1,24 +1,37 @@
 package com.example.navidrawer.model;
 
-public class Donor {
+import android.os.Parcel;
+import android.os.Parcelable;
 
+public class Donor{
+
+    private String NIC;
     private String FirstName;
     private String LastName;
     private String Email;
-    private Integer ContactNumber;
+    private String ContactNumber;
     private String Address;
     private String Password;
 
     public Donor() {
     }
 
-    public Donor(String firstName, String lastName, String email, Integer contactNumber, String address, String password) {
+    public Donor(String NIC, String firstName, String lastName, String email, String contactNumber, String address, String password) {
+        this.NIC = NIC;
         FirstName = firstName;
         LastName = lastName;
         Email = email;
         ContactNumber = contactNumber;
         Address = address;
         Password = password;
+    }
+
+    public String getNIC() {
+        return NIC;
+    }
+
+    public void setNIC(String NIC) {
+        this.NIC = NIC;
     }
 
     public String getFirstName() {
@@ -45,11 +58,11 @@ public class Donor {
         Email = email;
     }
 
-    public Integer getContactNumber() {
+    public String getContactNumber() {
         return ContactNumber;
     }
 
-    public void setContactNumber(Integer contactNumber) {
+    public void setContactNumber(String contactNumber) {
         ContactNumber = contactNumber;
     }
 
@@ -68,4 +81,5 @@ public class Donor {
     public void setPassword(String password) {
         Password = password;
     }
+
 }

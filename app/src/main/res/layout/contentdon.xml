@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/updateDonorName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_update_donName"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/updateDonorLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_update_donLocation"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/updateFoodTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_update_FoodTitle"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/updateFoodCat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_update_category"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/updateFoodQty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_update_qty"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/updateExpDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_update_expdate"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/updateNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_update_note"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/updateDonStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/hint_update_donstatus"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btn_DonationUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:backgroundTint="@color/btnclr"
+        android:textSize="18sp"/>
+</LinearLayout>
