@@ -36,6 +36,7 @@ public class UserRegistration extends AppCompatActivity {
         registerbtn = findViewById(R.id.register_btn);
         mAuth = FirebaseAuth.getInstance();
 
+        //function_registration
         registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,7 +44,7 @@ public class UserRegistration extends AppCompatActivity {
                 String Password = password.getText().toString();
                 String ConfPassword = confPassword.getText().toString();
 
-                if(!validatePassword() | !validateUsername()){
+                if(!validatePassword() | !validateUsername()){      //validate password and username
                     return;
                 }
                 else if(!Password.equals(ConfPassword)){

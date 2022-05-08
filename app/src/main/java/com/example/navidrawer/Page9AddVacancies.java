@@ -62,7 +62,6 @@ public class Page9AddVacancies extends AppCompatActivity {
 
                     //insert into the database
                     dbRef.push().setValue(vacancy);
-                    //dbRef.child("std1").setValue(std);
 
                     //feedback to the user via toast
                     Toast.makeText(getApplicationContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();

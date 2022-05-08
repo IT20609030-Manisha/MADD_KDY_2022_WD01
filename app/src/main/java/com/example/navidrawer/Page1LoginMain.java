@@ -48,10 +48,10 @@ public class Page1LoginMain extends AppCompatActivity {
             }
         });
 
+        //Login function
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // loadingPB.setVisibility(View.VISIBLE);
                 String userEmail = etUserEmail.getText().toString();
                 String userPassword = etUserPassword.getText().toString();
                 if (TextUtils.isEmpty(userEmail) && TextUtils.isEmpty(userPassword)) {
@@ -67,8 +67,7 @@ public class Page1LoginMain extends AppCompatActivity {
                                 startActivity(i);
                                 finish();
                             } else {
-                                // loadingPB.setVisibility(View.GONE);
-                                Toast.makeText(Page1LoginMain.this, "Unsuccessful...", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Page1LoginMain.this, "Login failed..", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });

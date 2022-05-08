@@ -71,9 +71,8 @@ public class Page5RegistrationDonor extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please enter the Contact Number", Toast.LENGTH_SHORT).show();
                 else if (TextUtils.isEmpty(etAddress.getText().toString()))
                     Toast.makeText(getApplicationContext(), "Please enter the Address", Toast.LENGTH_SHORT).show();
-                else if(!validateNIC() | !validateEmail() | !validateContactNumber()){
+                else if(!validateNIC() | !validateEmail() | !validateContactNumber())
                     return;
-                }
                 else {
                     donor.setNIC(etNIC.getText().toString().trim());
                     donor.setFirstName(etFname.getText().toString().trim());
@@ -84,7 +83,6 @@ public class Page5RegistrationDonor extends AppCompatActivity {
 
                     //insert into the database
                     dbRef.push().setValue(donor);
-                    //dbRef.child("std1").setValue(std);
 
                     //feedback to the user via toast
                     Toast.makeText(getApplicationContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
