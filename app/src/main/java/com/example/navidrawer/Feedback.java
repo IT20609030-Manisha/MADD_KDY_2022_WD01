@@ -56,6 +56,9 @@ public class Feedback extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please enter your Email", Toast.LENGTH_SHORT).show();
                 else if (TextUtils.isEmpty(etMessage.getText().toString()))
                     Toast.makeText(getApplicationContext(), "Please give your Feedback ", Toast.LENGTH_SHORT).show();
+                else if (!validateEmail()){
+                    return;
+                }
                 else {
                     fdbck.setName(etPersonName.getText().toString().trim());
                     fdbck.setEmail(etPersonEmail.getText().toString().trim());
@@ -80,7 +83,22 @@ public class Feedback extends AppCompatActivity {
 
         });
 
-    }
 
+    }
+    private boolean validateEmail() {
+        String val = etPersonEmail.getText().toString().trim();
+        String checkEmail = "[a-zA-Z0-9._-]+@[a-z]+.+[a-z]+";
+
+        if (val.isEmpty()) {
+            etPersonEmail.setError("Field can not be empty");
+            return false;
+        } else if (!val.matches(checkEmail)) {
+            etPersonEmail.setError("Invalid Email!");
+            return false;
+        } else {
+            etPersonEmail.setError(null);
+            return true;
+        }
+    }
 
 }

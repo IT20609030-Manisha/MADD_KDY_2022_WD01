@@ -34,7 +34,7 @@ public class OrdersView extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Order"), Orders.class)
                         .build();
 
-        orderAdapter = new OrderAdapter(options);
+        orderAdapter = new OrderAdapter(options,this);
         recyclerView2.setAdapter(orderAdapter);
 
         /*btnAssignDriver = findViewById(R.id.btnAssignDriver);

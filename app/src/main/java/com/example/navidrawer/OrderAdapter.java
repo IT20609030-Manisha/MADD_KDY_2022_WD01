@@ -1,6 +1,6 @@
 package com.example.navidrawer;
 
-import android.content.Intent;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,14 +15,16 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 public class OrderAdapter extends FirebaseRecyclerAdapter<Orders,OrderAdapter.myViewHolder> {
+    private Context context;
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
      *
      * @param options
      */
-    public OrderAdapter(@NonNull FirebaseRecyclerOptions<Orders> options) {
+    public OrderAdapter(@NonNull FirebaseRecyclerOptions<Orders> options,Context context) {
         super(options);
+        this.context = context;
     }
 
     @Override
@@ -34,10 +36,28 @@ public class OrderAdapter extends FirebaseRecyclerAdapter<Orders,OrderAdapter.my
         holder.address.setText(orders.getAddress());
 
 
-        holder.btnAssignDriver.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), AssignDriver.class);
-            v.getContext().startActivity(intent);
-        });
+       /* holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Overridepublic void onClick(View v) {
+                if (position == 0) {
+                    EventBus.getDefault().post(new OnClickEvent())
+                }
+            }
+        });*/
+
+        //holder.btnAssignDriver.setOnClickListener((View v) -> {
+           // Intent intent = new Intent(v.getContext(), AssignDriver.class);
+            //v.getContext().startActivity(intent);
+
+            //v.getContext().startActivity(new Intent(context, AssignDriver.class));
+            //Intent intent = new Intent(OrdersView.java, AssignDriver.class);
+            //OrdersView.startActivity(intent);
+       // });
+
+
+        //Intent intent=new Intent(holder.btnAssignDriver.setOnClickListener((AssignDriver.class)));
+
+
+
 
     }
 
