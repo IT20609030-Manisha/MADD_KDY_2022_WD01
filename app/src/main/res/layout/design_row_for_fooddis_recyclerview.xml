@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="38dp"
+    app:cardCornerRadius="20dp"
+    app:cardUseCompatPadding="true">
+
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/imgadd2"
+        android:id="@+id/image_DisplayDonation" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="150dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:text="Donor's Name"
+            android:textColor="@color/darkBlue"
+            android:textSize="15sp"
+            android:id="@+id/tv_donorNameDisplay">
+        </TextView>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Donor's Location"
+            android:textColor="@color/darkBlue"
+            android:textSize="15sp"
+            android:id="@+id/tv_donorLocationDisplay">
+        </TextView>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Food Title"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:id="@+id/tv_foodTitleDisplay"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:layout_marginBottom="5dp"
+            android:textSize="18sp"
+            android:id="@+id/tv_foodCatDisplay"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quantity"
+            android:layout_marginBottom="5dp"
+            android:textSize="18sp"
+            android:id="@+id/tv_foodQtyDisplay"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Expiry Date"
+            android:layout_marginBottom="5dp"
+            android:textSize="18sp"
+            android:id="@+id/tv_foodExpDateDisplay"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:textColor="@color/FoodStatusColor"
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/tv_foodStatusDisplay"/>
+
+        <Button
+            android:id="@+id/btnOrderFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/btn_OrderFood"
+            android:textSize="18sp"
+            android:backgroundTint="@color/btnclr"/>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="38dp"
+    app:cardCornerRadius="20dp"
+    app:cardUseCompatPadding="true">
+
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:orientation="vertical" />
+
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="8dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/imgadd2"
+        android:id="@+id/image_ViewDonation" />
+
+    <LinearLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="50dp"
+            android:src="@drawable/edit_image"
+            android:layout_marginLeft="250dp"
+            android:id="@+id/image_DonEdit" />
+
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_marginTop="30dp"
+            android:layout_height="50dp"
+            android:src="@drawable/delete"
+            android:layout_marginLeft="250dp"
+            android:id="@+id/image_DonDelete" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="150dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Donor's Name"
+            android:textSize="16sp"
+            android:id="@+id/tv_donorNameRetrive">
+        </TextView>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Donor's Location"
+            android:textSize="16sp"
+            android:id="@+id/tv_donorLocationRetrive">
+        </TextView>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Food Title"
+            android:textSize="16sp"
+            android:id="@+id/tv_foodTitleRetrive"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Category"
+            android:textSize="16sp"
+            android:id="@+id/tv_foodCatRetrive"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Quantity"
+            android:textSize="16sp"
+            android:id="@+id/tv_foodQtyRetrive"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Expiry Date"
+            android:textSize="16sp"
+            android:id="@+id/tv_foodExpDateRetrive"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Note"
+            android:textSize="16sp"
+            android:id="@+id/tv_foodNoteRetrive"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Status"
+            android:textSize="16sp"
+            android:id="@+id/tv_foodStatusRetrive"/>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
