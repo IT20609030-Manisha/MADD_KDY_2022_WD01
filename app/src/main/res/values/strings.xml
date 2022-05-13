@@ -47,6 +47,16 @@
     <string name="btn_SubmitDonation">submit</string>
     <string name="cb_msg">I assure that food quality and hygiene has maintained</string>
 
+    <string name="hint_update_donName">Donor Name</string>
+    <string name="hint_update_donLocation">Donor Location</string>
+    <string name="hint_update_FoodTitle">Food Title</string>
+    <string name="hint_update_category">Category</string>
+    <string name="hint_update_qty">Quantity</string>
+    <string name="hint_update_expdate">Expiry Date</string>
+    <string name="hint_update_note">Special Note</string>
+    <string name="hint_update_donstatus">Status</string>
+    <string name="btn_OrderFood">Order</string>
+
 
 
     //IT20633622
@@ -113,6 +123,21 @@
     <string name="RegFormEm">Emergency Contacts</string>
     <string name="RegFormNeeder">Organization Details</string>
     <string name="tvtopic12">All Posts</string>
+
+    //IT20622800
+    <string name="etfeedback">Send Us Your Feedback!</string>
+    <string name="etfeedback2">Any feedback or suggestion would be appreciated.</string>
+    <string name="etName">Name</string>
+    <string name="etEmail">Email</string>
+    <string name="etMsg">Message</string>
+    <string name="btnSend">Send</string>
+    <string name="etMssg">"Message: "</string>
+    <string name="et_Name">"Name: "</string>
+    <string name="etname">"Name: "</string>
+    <string name="btnFeedback" />
+    <string name="etDelimsg">Your order has been successfully placed!</string>
+    <string name="etDelivered">Your Order Delivered!!!</string>
+    <string name="btn_Feedback">Feedback</string>
 
 
 </resources>

@@ -57,7 +57,13 @@ public class Page1LoginMain extends AppCompatActivity {
                 if (TextUtils.isEmpty(userEmail) && TextUtils.isEmpty(userPassword)) {
                     Toast.makeText(Page1LoginMain.this, "Please enter your credentials..", Toast.LENGTH_SHORT).show();
                     return;
-                } else {
+                }
+                else if (userEmail.equals("admin@gmail.com") && userPassword.equals("123")){
+                    Toast.makeText(Page1LoginMain.this, "Admin Login...", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(Page1LoginMain.this, AdminDashboard.class);
+                    startActivity(i);
+                }
+                else {
                     mAuth.signInWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {

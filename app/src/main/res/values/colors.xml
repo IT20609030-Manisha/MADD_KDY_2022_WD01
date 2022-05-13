@@ -18,4 +18,8 @@
 
     //IT20633622
     <color name="LoginHintColor">#fbf8f8</color>
+
+    //IT20609030
+    <color name="FoodStatusColor">#b70f0a</color>
+
 </resources>

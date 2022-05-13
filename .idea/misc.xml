@@ -4,6 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/MADD Project Master/app/src/main/res/drawable-v24/ic_baseline_add_photo_alternate_24.xml" value="0.2265" />
+        <entry key="..\:/MADD Project Master/app/src/main/res/layout/activity_add_donation.xml" value="0.25416666666666665" />
+        <entry key="..\:/MADD Project Master/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.2" />
+        <entry key="..\:/MADD Project Master/app/src/main/res/layout/activity_delivered.xml" value="0.25416666666666665" />
+        <entry key="..\:/MADD Project Master/app/src/main/res/layout/activity_feedback_view.xml" value="0.25416666666666665" />
+        <entry key="..\:/MADD Project Master/app/src/main/res/layout/activity_page10_all_vacancies.xml" value="0.25416666666666665" />
+        <entry key="..\:/MADD Project Master/app/src/main/res/layout/activity_page11_post_reviews.xml" value="0.25416666666666665" />
+        <entry key="..\:/MADD Project Master/app/src/main/res/layout/activity_page1_login_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/MADD Project Master/app/src/main/res/layout/activity_page2_select_account.xml" value="0.25416666666666665" />
+        <entry key="..\:/MADD Project Master/app/src/main/res/layout/contentdon.xml" value="0.25416666666666665" />
+        <entry key="..\:/MADD Project Master/app/src/main/res/layout/design_row_for_donadrecyclerview.xml" value="0.25416666666666665" />
+        <entry key="..\:/MADD Project Master/app/src/main/res/layout/feedback_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/MADD Project Master/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/MADD/NaviDrawer/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.2495" />
         <entry key="..\:/MADD/NaviDrawer/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.25416666666666665" />
         <entry key="..\:/MADD/NaviDrawer/app/src/main/res/layout/activity_main.xml" value="0.24682971014492755" />

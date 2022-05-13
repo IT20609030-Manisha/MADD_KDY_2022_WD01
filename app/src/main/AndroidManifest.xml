@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.navidrawer">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +12,87 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NaviDrawer">
+        <activity
+            android:name=".OrderReport"
+            android:exported="false" />
+        <activity
+            android:name=".DeliveryStatus"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateDeliveryNotifications"
+            android:exported="false" />
+        <activity
+            android:name=".AssignDriver"
+            android:exported="false" />
+        <activity
+            android:name=".OrdersView"
+            android:exported="false" />
+        <activity
+            android:name=".FeedbackView"
+            android:exported="false" />
+        <activity
+            android:name=".Delivered"
+            android:exported="false" />
+        <activity
+            android:name=".Feedback"
+            android:exported="false" />
+        <activity
+            android:name=".ReportNeederAndDonors"
+            android:exported="false" />
+        <activity
+            android:name=".page13NeederRegistration"
+            android:exported="false" />
+        <activity
+            android:name=".UserRegistration"
+            android:exported="false" />
+        <activity
+            android:name=".VacancyUserView"
+            android:exported="false" />
+        <activity
+            android:name=".Page10AllVacancies"
+            android:exported="false" />
+        <activity
+            android:name=".Page12AllReviews"
+            android:exported="false" />
+        <activity
+            android:name=".Page11PostReviews"
+            android:exported="false" />
+        <activity
+            android:name=".Page6RegistrationNeeder"
+            android:exported="false" />
+        <activity
+            android:name=".Page9AddVacancies"
+            android:exported="false" />
+        <activity
+            android:name=".Page8NewPassword"
+            android:exported="false" />
+        <activity
+            android:name=".Page7NewPassword"
+            android:exported="false" />
+        <activity
+            android:name=".Page5RegistrationDonor"
+            android:exported="false" />
+        <activity
+            android:name=".Page4RegistrationDriver"
+            android:exported="false" />
+        <activity
+            android:name=".Page3PasswordForgot"
+            android:exported="false" />
+        <activity
+            android:name=".Page2SelectAccount"
+            android:exported="false" />
+        <activity
+            android:name=".Page1LoginMain"
+            android:exported="false" />
+        <activity
+            android:name=".DonationReport"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerviewDisplayFoodList"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerviewDonAdList"
+            android:exported="false" />
         <activity
             android:name=".AddDonation"
             android:exported="false" />
